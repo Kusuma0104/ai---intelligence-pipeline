@@ -1,0 +1,9 @@
+input_name,canonical_name,match_type,score
+OpenAI,OpenAI,EXACT,100.0
+Open AI,OpenAI,EXACT,100.0
+OpenAI Inc.,OpenAI,EXACT,100.0
+Anthropic,Anthropic,EXACT,100.0
+MistralAI,Mistral AI,EXACT,100.0
+HuggingFace,Hugging Face,EXACT,100.0
+Scale AI,Scale AI,EXACT,100.0
+Completely Unknown Company,,NO_MATCH,40.0
