@@ -140,7 +140,86 @@ class AsyncCrawler:
                 status="failed",
                 error=str(exc),
             )
+            
+    def needs_playwright(self, result: CrawlResult) -> bool:
+        """
+        Decide whether a successful HTTP response appears to be
+        JavaScript-heavy and should be rendered with Playwright.
 
+        Security note:
+        This is only for permitted JS rendering. It does not
+        bypass CAPTCHA, Cloudflare, Datadome, authentication,
+        or other security controls.
+        """
+
+        if result.status != "success":
+            return False
+
+        content = result.content.lower()
+
+        if len(content) < 1000:
+            return True
+
+        js_markers = [
+            "__next",
+            "__nuxt",
+            "webpack",
+            "react",
+            "vue",
+            "angular",
+            "window.__",
+            "<script",
+        ]
+
+        marker_count = sum(
+            marker in content
+            for marker in js_markers
+        )
+
+        text_length = len(
+            " ".join(
+                line.strip()
+                for line in content.splitlines()
+                if line.strip()
+            )
+        )
+
+        return marker_count >= 3 and text_length < 3000
+    
+    async def fetch_with_strategy(
+        self,
+        session: aiohttp.ClientSession,
+        url: str
+    ) -> CrawlResult:
+
+        http_result = await self.fetch_http(
+            session,
+            url
+        )
+
+        # Never attempt to bypass protected endpoints.
+        if http_result.status == "failed":
+            if http_result.error in {
+                "HTTP 401",
+                "HTTP 403",
+                "HTTP 429",
+            }:
+                return http_result
+
+            # For ordinary HTTP failures, keep the failure
+            # rather than attempting to defeat access controls.
+            return http_result
+
+        if self.needs_playwright(http_result):
+            print(
+                f"JS-heavy source detected -> "
+                f"Playwright: {url}"
+            )
+
+            return await self.fetch_playwright(url)
+
+        return http_result
+    
     async def crawl(self, urls: List[str]) -> List[CrawlResult]:
         start = time.perf_counter()
 
@@ -148,7 +227,7 @@ class AsyncCrawler:
 
         async with aiohttp.ClientSession(connector=connector) as session:
             tasks = [
-                self.fetch_http(session, url)
+                self.fetch_with_strategy(session, url)
                 for url in urls
             ]
 

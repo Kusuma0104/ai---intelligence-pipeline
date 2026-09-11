@@ -1,0 +1,15 @@
+aiohttp
+beautifulsoup4
+pydantic
+python-dotenv
+tenacity
+pandas
+openpyxl
+feedparser
+dateparser
+rapidfuzz
+requests
+pyarrow
+reportlab
+pypdf
+playwright

@@ -3,18 +3,56 @@ import aiohttp
 import feedparser
 import pandas as pd
 import re
+import hashlib
 
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 from dateparser import parse
 from pathlib import Path
-
+from src.utils.dates import normalize_date, missing_date_heuristic
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_FILE = DATA_DIR / "jobs_24h.csv"
+SEEN_HASH_FILE = DATA_DIR / "job_seen_hashes.txt"
+
+def load_seen_hashes():
+    if not SEEN_HASH_FILE.exists():
+        return set()
+
+    try:
+        return {
+            line.strip()
+            for line in SEEN_HASH_FILE.read_text(
+                encoding="utf-8"
+            ).splitlines()
+            if line.strip()
+        }
+    except Exception:
+        return set()
 
 
+def save_seen_hashes(hashes):
+    DATA_DIR.mkdir(exist_ok=True)
+
+    SEEN_HASH_FILE.write_text(
+        "\n".join(sorted(hashes)),
+        encoding="utf-8"
+    )
+
+
+def make_content_hash(title, company, url, description):
+    raw = "||".join([
+        str(title or "").strip(),
+        str(company or "").strip(),
+        str(url or "").strip(),
+        str(description or "").strip(),
+    ])
+
+    return hashlib.sha256(
+        raw.encode("utf-8")
+    ).hexdigest()
+    
 AI_PATTERNS = [
     r"\bartificial intelligence\b",
     r"\bartificial-intelligence\b",
@@ -132,13 +170,43 @@ async def add_record(
     url,
     published,
     description,
-    location=""
+    location="",
+    seen_hashes = None
 ):
 
-    published_dt = parse_date(published)
+    if seen_hashes is None:
+        seen_hashes = set()
 
-    if not published_dt:
-        return
+    normalized_date = normalize_date(published)
+
+    clean_description = clean_text(description)
+
+    content_hash = make_content_hash(
+        title,
+        company,
+        url,
+        clean_description
+    )
+
+    heuristic_used = False
+
+    if normalized_date:
+        published_dt = datetime.fromisoformat(
+            normalized_date
+        )
+    else:
+        normalized_date, heuristic_used = missing_date_heuristic(
+            clean_description,
+            content_hash,
+            seen_hashes
+        )
+
+        if not normalized_date:
+            return
+
+        published_dt = datetime.fromisoformat(
+            normalized_date
+        )
 
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=24)
@@ -146,8 +214,7 @@ async def add_record(
     if published_dt < cutoff:
         return
 
-    clean_description = clean_text(description)
-
+    
     if not is_ai_job(
         title,
         clean_description
@@ -165,7 +232,8 @@ async def add_record(
 
         if len(page_text) > len(clean_description):
             clean_description = page_text
-
+    seen_hashes.add(content_hash)
+    
     records.append({
         "schemaVersion": "1.0",
         "recordType": "JOB",
@@ -173,9 +241,11 @@ async def add_record(
         "company": str(company or "").strip(),
         "location": str(location or "").strip(),
         "published_date": published_dt.isoformat(),
+        "date_heuristic_used" : heuristic_used,
         "source_name": source,
         "source_url": str(url).strip(),
         "full_text": clean_description,
+        
     })
 
 
@@ -315,7 +385,7 @@ async def collect_jobs():
     )
 
     records = []
-
+    seen_hashes = load_seen_hashes()
     timeout = aiohttp.ClientTimeout(
         total=60
     )
@@ -357,7 +427,8 @@ async def collect_jobs():
                     job.get("url"),
                     job.get("pubDate"),
                     job.get("jobDescription"),
-                    job.get("jobGeo")
+                    job.get("jobGeo"),
+                    seen_hashes
                 )
 
         # =================================
@@ -384,7 +455,8 @@ async def collect_jobs():
                     entry.get("updated", "")
                 ),
                 rss_full_text(entry),
-                ""
+                "",
+                seen_hashes
             )
 
         # =================================
@@ -411,7 +483,8 @@ async def collect_jobs():
                     entry.get("updated", "")
                 ),
                 rss_full_text(entry),
-                ""
+                "",
+                seen_hashes
             )
 
         # =================================
@@ -448,7 +521,8 @@ async def collect_jobs():
                     job.get("url"),
                     job.get("date"),
                     job.get("description"),
-                    job.get("location")
+                    job.get("location"),
+                    seen_hashes
                 )
         # =================================
         # 5. ARBEITNOW
@@ -496,7 +570,8 @@ async def collect_jobs():
                     job.get("url"),
                     created,
                     job.get("description"),
-                    job.get("location")
+                    job.get("location"),
+                    seen_hashes
                 )
 
         # =================================
@@ -534,7 +609,8 @@ async def collect_jobs():
                     entry.get("updated", "")
                 ),
                 rss_full_text(entry),
-                location
+                location,
+                seen_hashes
             )
 
     # =================================
@@ -569,6 +645,7 @@ async def collect_jobs():
         index=False,
         encoding="utf-8"
     )
+    save_seen_hashes(seen_hashes)
 
     print()
     print(
