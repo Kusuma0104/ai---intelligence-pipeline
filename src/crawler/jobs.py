@@ -9,6 +9,13 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 from dateparser import parse
 from pathlib import Path
+from src.extraction.classifiers import (
+    classify_is_remote,
+    classify_role_family,
+    company_from_job_title,
+)
+from src.extraction.schemas import JobContent, JobEntity, SourceInfo, job_row
+from src.resolution.entity_resolver import EntityResolver
 from src.utils.dates import normalize_date, missing_date_heuristic
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -73,8 +80,8 @@ AI_PATTERNS = [
     r"\bml engineer\b",
     r"\bmachine learning engineer\b",
     r"\bdata scientist\b",
-    r"\bAI\b",
-    r"\bML\b",
+    r"\bai engineer\b",
+    r"\bmlops\b",
 ]
 
 
@@ -233,20 +240,40 @@ async def add_record(
         if len(page_text) > len(clean_description):
             clean_description = page_text
     seen_hashes.add(content_hash)
-    
-    records.append({
-        "schemaVersion": "1.0",
-        "recordType": "JOB",
-        "title": str(title).strip(),
-        "company": str(company or "").strip(),
-        "location": str(location or "").strip(),
-        "published_date": published_dt.isoformat(),
-        "date_heuristic_used" : heuristic_used,
-        "source_name": source,
-        "source_url": str(url).strip(),
-        "full_text": clean_description,
-        
-    })
+
+    title_text = str(title).strip()
+    company_text = company_from_job_title(title_text, str(company or "").strip())
+    resolver = EntityResolver()
+    canonical_company = resolver.canonical_or_self(company_text) if company_text else company_text
+    source_url = str(url).strip()
+    collected_at = datetime.now(timezone.utc)
+
+    entity = JobEntity(
+        source=SourceInfo(name=source, url=source_url),
+        content=JobContent(
+            company=canonical_company or company_text or "Unknown",
+            date=published_dt.isoformat(),
+            is_remote=classify_is_remote(
+                title_text,
+                clean_description,
+                str(location or ""),
+                source,
+            ),
+            role_family=classify_role_family(title_text, clean_description),
+        ),
+        collectedAt=collected_at,
+    )
+
+    row = job_row(
+        entity,
+        extra={
+            "content.title": title_text,
+            "content.location": str(location or "").strip(),
+            "date_heuristic_used": heuristic_used,
+            "full_text": clean_description,
+        },
+    )
+    records.append(row)
 
 
 async def fetch_json(
@@ -626,13 +653,17 @@ async def collect_jobs():
             "the last 24 hours."
         )
 
+    url_col = "source.url" if "source.url" in df.columns else "source_url"
+    date_col = "content.date" if "content.date" in df.columns else "published_date"
+    source_col = "source.name" if "source.name" in df.columns else "source"
+
     df = df.drop_duplicates(
-        subset=["source_url"],
+        subset=[url_col],
         keep="first"
     )
 
     df = df.sort_values(
-        "published_date",
+        date_col,
         ascending=False
     )
 
@@ -665,21 +696,26 @@ async def collect_jobs():
 
     print(
         "Unique job sources:",
-        df["source_name"].nunique()
+        "source.name" if "source.name" in df.columns else "source_name"
+    )
+
+    print(
+        "Unique job sources:",
+        df[source_col].nunique()
     )
 
     print(
         "Sources:",
         ", ".join(
             sorted(
-                df["source_name"].unique()
+                df[source_col].astype(str).unique()
             )
         )
     )
 
     print(
         "Jobs with full text:",
-        df["full_text"]
+        df.get("full_text", pd.Series(dtype=str))
         .astype(str)
         .str.strip()
         .ne("")

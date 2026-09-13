@@ -9,6 +9,7 @@ from pathlib import Path
 import aiohttp
 import pandas as pd
 from dotenv import load_dotenv
+import feedparser
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -62,6 +63,46 @@ def extract_github_repo(url):
         match.group(2).replace(".git", "")
     )
 
+async def fetch_arxiv_metadata(session, arxiv_id):
+    """Fetch authoritative metadata for a paper from arXiv."""
+    url = (
+        "https://export.arxiv.org/api/query"
+        f"?search_query=id:{arxiv_id}&max_results=1"
+    )
+
+    try:
+        async with session.get(
+            url,
+            timeout=aiohttp.ClientTimeout(total=30),
+        ) as response:
+            if response.status != 200:
+                return {}
+
+            content = await response.text()
+
+        feed = feedparser.parse(content)
+
+        if not feed.entries:
+            return {}
+
+        entry = feed.entries[0]
+
+        authors = [
+            author.name
+            for author in entry.get("authors", [])
+            if hasattr(author, "name")
+        ]
+
+        return {
+            "title": " ".join(entry.get("title", "").split()),
+            "authors": "; ".join(authors),
+            "paper_url": entry.get("link", ""),
+            "published_date": entry.get("published", ""),
+        }
+
+    except Exception as exc:
+        print(f"arXiv metadata lookup failed for {arxiv_id}: {exc}")
+        return {}
 
 async def verify_repository(session, github_url):
 
@@ -200,6 +241,31 @@ async def complete_records():
 
     papers = pd.read_csv(INPUT_FILE)
 
+        # Restore authoritative publication dates from the original arXiv dataset
+    metadata_file = DATA_DIR / "research_papers.csv"
+
+    if metadata_file.exists():
+        metadata = pd.read_csv(metadata_file)
+
+        if "arxiv_id" in metadata.columns and "published_date" in metadata.columns:
+            date_map = (
+                metadata.dropna(subset=["arxiv_id"])
+                .assign(arxiv_id=lambda x: x["arxiv_id"].astype(str).str.strip())
+                .set_index("arxiv_id")["published_date"]
+                .to_dict()
+            )
+
+            papers["arxiv_id"] = papers["arxiv_id"].astype(str).str.strip()
+
+            papers["published_date"] = papers.apply(
+                lambda row: (
+                    date_map.get(row["arxiv_id"], "")
+                    if not str(row.get("published_date", "")).strip()
+                    else row["published_date"]
+                ),
+                axis=1,
+            )
+
     papers["github_stars"] = pd.to_numeric(
         papers["github_stars"],
         errors="coerce"
@@ -305,7 +371,7 @@ async def complete_records():
 
         for index in missing.index:
 
-            if len(verified) >= 1000:
+            if verified["paper_url"].nunique() >= 1000:
                 break
 
 
@@ -319,9 +385,9 @@ async def complete_records():
             ]
 
 
-            for _, candidate in candidates.iterrows():
+            for candidate in candidates.itertuples(index=False):
 
-                repo_url = candidate["repo_url"]
+                repo_url = candidate.repo_url
 
                 if repo_url in used_repos:
                     continue
@@ -397,7 +463,7 @@ async def complete_records():
 
             for _, candidate in pwc.iterrows():
 
-                if len(verified) >= 1000:
+                if verified["paper_url"].nunique() >= 1000:
                     break
 
 
@@ -430,26 +496,35 @@ async def complete_records():
                     continue
 
 
+                metadata = await fetch_arxiv_metadata(
+                    session,
+                    arxiv_id,
+                )
+
                 new_record = {
                     "schemaVersion": "1.0",
                     "recordType": "RESEARCH_PAPER",
-                    "title": candidate[
-                        "paper_title"
-                    ],
-                    "authors": "",
-                    "paper_url": candidate[
-                        "paper_url_abs"
-                    ],
+                    "title": metadata.get(
+                        "title"
+                    ) or candidate["paper_title"],
+                    "authors": metadata.get(
+                        "authors",
+                        "",
+                    ),
+                    "paper_url": metadata.get(
+                        "paper_url"
+                    ) or candidate["paper_url_abs"],
                     "github_url": result[
                         "github_url"
                     ],
                     "github_stars": result[
                         "github_stars"
                     ],
-                    "published_date": "",
-                    "source_name": (
-                        "Papers With Code / arXiv"
+                    "published_date": metadata.get(
+                        "published_date",
+                        "",
                     ),
+                    "source_name": "arXiv",
                     "arxiv_id": arxiv_id,
                     "github_forks": result[
                         "github_forks"
@@ -458,7 +533,6 @@ async def complete_records():
                         "github_watchers"
                     ],
                 }
-
 
                 papers = pd.concat(
                     [
@@ -512,12 +586,61 @@ async def complete_records():
 
 
     papers = papers.drop_duplicates(
-        subset=["arxiv_id"],
+        subset=["paper_url"],
         keep="first"
     )
 
+    if len(papers) < 1000:
+        print(
+            f"WARNING: only {len(papers)} unique verified papers "
+            f"available after deduplication."
+        )
+
 
     papers = papers.head(1000)
+
+        # ---------------------------------
+    # Backfill missing arXiv publication dates
+    # ---------------------------------
+
+    missing_date_indexes = papers[
+        papers["published_date"].isna()
+        | (papers["published_date"].astype(str).str.strip() == "")
+    ].index.tolist()
+
+    if missing_date_indexes:
+        print()
+        print(
+            f"Fetching arXiv publication dates for "
+            f"{len(missing_date_indexes)} papers..."
+        )
+
+        async with aiohttp.ClientSession() as session:
+            for index in missing_date_indexes:
+                arxiv_id = str(
+                    papers.loc[index, "arxiv_id"]
+                ).strip()
+
+                if not arxiv_id or arxiv_id.lower() == "nan":
+                    continue
+
+                metadata = await fetch_arxiv_metadata(
+                    session,
+                    arxiv_id,
+                )
+
+                published_date = metadata.get(
+                    "published_date",
+                    "",
+                )
+
+                if published_date:
+                    papers.loc[
+                        index,
+                        "published_date"
+                    ] = published_date
+
+                await asyncio.sleep(0.2)
 
 
     papers.to_csv(

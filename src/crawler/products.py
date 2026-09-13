@@ -1,225 +1,141 @@
 import asyncio
-import aiohttp
-from pathlib import Path
+from datetime import datetime, timezone
+
 import pandas as pd
+from pydantic import ValidationError
 
+from src.config import DATA_DIR
+from src.crawler.async_crawler import AsyncCrawler
+from src.extraction.llm_orchestrator import LLMOrchestrator
+from src.extraction.schemas import (
+    PricingModel,
+    ProductContent,
+    ProductEntity,
+    SourceInfo,
+    product_row,
+)
+from src.resolution.entity_resolver import EntityResolver
+from src.utils.logging import get_logger
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = PROJECT_ROOT / "data"
+logger = get_logger("products")
+
 OUTPUT_FILE = DATA_DIR / "products_1000.csv"
 
 AIFOXX_URL = (
-    "https://raw.githubusercontent.com/"
-    "withkarann/aifoxx/main/src/data/tools.json"
+    "https://raw.githubusercontent.com/withkarann/aifoxx/main/src/data/tools.json"
 )
-
 BEST_AI_URL = "https://bestaihub.cc/index.json"
 
 
-async def fetch_json(session, url):
-    async with session.get(url) as response:
-        print("Source:", url)
-        print("HTTP status:", response.status)
-
-        if response.status != 200:
-            print("Failed to fetch source.")
-            return []
-
-        return await response.json(content_type = None)
+def _http_url(value: str) -> str:
+    value = (value or "").strip()
+    if value.startswith("http://") or value.startswith("https://"):
+        return value
+    return ""
 
 
-async def collect_products():
+async def collect_products(limit: int = 1000, use_llm: bool = False):
+    logger.info("Collecting AI products from public directories")
+    resolver = EntityResolver()
+    orchestrator = LLMOrchestrator() if use_llm else None
+    collected_at = datetime.now(timezone.utc)
 
-    print()
-    print("===================================")
-    print("Building 1000 AI products")
-    print("===================================")
+    async with AsyncCrawler(js_fallback=False) as crawler:
+        aifoxx = await crawler.fetch_json(AIFOXX_URL) or []
+        best_ai = await crawler.fetch_json(BEST_AI_URL) or []
 
-    timeout = aiohttp.ClientTimeout(total=120)
+    logger.info("AIFOXX records: %s", len(aifoxx) if isinstance(aifoxx, list) else 0)
+    logger.info("Best of AI records: %s", len(best_ai) if isinstance(best_ai, list) else 0)
 
-    async with aiohttp.ClientSession(
-        timeout=timeout
-    ) as session:
+    raw_items = []
+    if isinstance(aifoxx, list):
+        for item in aifoxx:
+            website = _http_url(item.get("url"))
+            name = str(item.get("name") or "").strip()
+            if name and website:
+                raw_items.append(
+                    {
+                        "name": name,
+                        "description": str(item.get("description") or ""),
+                        "pricing": str(item.get("pricing") or ""),
+                        "website": website,
+                        "source_name": "AIFOXX",
+                    }
+                )
 
-        # Source 1
-        aifoxx = await fetch_json(
-            session,
-            AIFOXX_URL
-        )
+    if isinstance(best_ai, list):
+        for item in best_ai:
+            website = _http_url(item.get("website"))
+            name = str(item.get("name") or "").strip()
+            if name and website:
+                raw_items.append(
+                    {
+                        "name": name,
+                        "description": str(item.get("description") or ""),
+                        "pricing": str(item.get("price") or item.get("pricing") or ""),
+                        "website": website,
+                        "source_name": "Best of AI",
+                    }
+                )
 
-        print(
-            "AIFOXX records received:",
-            len(aifoxx)
-        )
+    records = []
+    seen = set()
 
-        # Source 2
-        best_ai = await fetch_json(
-            session,
-            BEST_AI_URL
-        )
+    for item in raw_items:
+        key = (item["name"].lower(), item["website"].lower())
+        if key in seen:
+            continue
+        seen.add(key)
 
-        print(
-            "Best of AI records received:",
-            len(best_ai)
-        )
+        fallback_startup = resolver.canonical_or_self(item["name"])
+        pricing = PricingModel.FREEMIUM
+        startup_name = fallback_startup
 
-    products = []
+        if orchestrator:
+            classified = await orchestrator.classify_product(
+                item["name"],
+                item["description"],
+                item["pricing"],
+                fallback_startup,
+            )
+            pricing = classified.pricingModel
+            startup_name = resolver.canonical_or_self(classified.startupName)
+        else:
+            from src.extraction.classifiers import classify_pricing
 
-    # AIFOXX
-    for item in aifoxx:
+            pricing = classify_pricing(item["pricing"], item["description"])
 
-        name = str(
-            item.get("name", "")
-        ).strip()
-
-        website = str(
-            item.get("url", "")
-        ).strip()
-
-        if not name or not website:
+        try:
+            entity = ProductEntity(
+                source=SourceInfo(name=item["source_name"], url=item["website"]),
+                content=ProductContent(
+                    startupName=startup_name,
+                    pricingModel=pricing,
+                ),
+                collectedAt=collected_at,
+            )
+        except ValidationError:
             continue
 
-        products.append({
-            "schemaVersion": "1.0",
-            "recordType": "PRODUCT",
-            "name": name,
-            "description": item.get(
-                "description",
-                ""
-            ),
-            "category": item.get(
-                "category",
-                ""
-            ),
-            "pricing": item.get(
-                "pricing",
-                ""
-            ),
-            "website": website,
-            "source_name": "AIFOXX",
-            "source_url": website,
-        })
+        row = product_row(entity)
+        row["product_name"] = item["name"]
+        row["description"] = item["description"]
+        records.append(row)
 
-    # Best of AI
-    for item in best_ai:
+        if len(records) >= limit:
+            break
 
-        name = str(
-            item.get("name", "")
-        ).strip()
-
-        website = str(
-            item.get("website", "")
-        ).strip()
-
-        if not name or not website:
-            continue
-
-        products.append({
-            "schemaVersion": "1.0",
-            "recordType": "PRODUCT",
-            "name": name,
-            "description": item.get(
-                "description",
-                ""
-            ),
-            "category": item.get(
-                "category",
-                ""
-            ),
-            "pricing": item.get(
-                "price",
-                ""
-            ),
-            "website": website,
-            "source_name": "Best of AI",
-            "source_url": website,
-        })
-
-    # Convert to DataFrame
-    df = pd.DataFrame(products)
-
-    if df.empty:
+    df = pd.DataFrame(records)
+    if df.empty or len(df) < limit:
         raise RuntimeError(
-            "No product records collected."
+            f"Only {len(df)} unique products found. Need at least {limit}."
         )
 
-    # Clean names
-    df["name"] = (
-        df["name"]
-        .astype(str)
-        .str.strip()
-    )
+    df = df.head(limit)
+    df.to_csv(OUTPUT_FILE, index=False, encoding="utf-8")
+    logger.info("Saved %s products to %s", len(df), OUTPUT_FILE)
+    return df
 
-    # Clean websites
-    df["website"] = (
-        df["website"]
-        .astype(str)
-        .str.strip()
-    )
-
-    # Remove empty values
-    df = df[
-        (df["name"] != "")
-        & (df["website"] != "")
-    ]
-
-    # Remove duplicate product + website
-    df = df.drop_duplicates(
-        subset=["name", "website"],
-        keep="first"
-    )
-
-    print()
-    print(
-        "Combined unique products:",
-        len(df)
-    )
-
-    if len(df) < 1000:
-        raise RuntimeError(
-            "Less than 1000 real products "
-            "were found."
-        )
-
-    # Keep exactly 1000
-    df = df.head(1000)
-
-    DATA_DIR.mkdir(
-        exist_ok=True
-    )
-
-    df.to_csv(
-        OUTPUT_FILE,
-        index=False,
-        encoding="utf-8"
-    )
-
-    print()
-    print("===================================")
-    print("PRODUCT DATASET COMPLETE")
-    print("===================================")
-    print(
-        "AI products saved:",
-        len(df)
-    )
-    print(
-        "Unique product names:",
-        df["name"].nunique()
-    )
-    print(
-        "Products with website:",
-        (
-            df["website"]
-            .astype(str)
-            .str.strip()
-            .ne("")
-            .sum()
-        )
-    )
-    print(
-        "Output:",
-        OUTPUT_FILE
-    )
 
 if __name__ == "__main__":
     asyncio.run(collect_products())

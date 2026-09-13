@@ -1,17 +1,26 @@
 import asyncio
-from pathlib import Path
+from datetime import datetime, timezone
+from typing import Optional
 
-import aiohttp
 import pandas as pd
+from pydantic import HttpUrl, ValidationError
 
+from src.config import DATA_DIR
+from src.crawler.async_crawler import AsyncCrawler
+from src.extraction.schemas import (
+    SourceInfo,
+    StartupContent,
+    StartupData,
+    StartupEntity,
+    startup_row,
+)
+from src.resolution.entity_resolver import EntityResolver
+from src.utils.logging import get_logger
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = PROJECT_ROOT / "data"
+logger = get_logger("startups")
 
 OUTPUT_FILE = DATA_DIR / "startups_1000.csv"
 
-
-# Real YC AI-related public datasets
 TAGS = [
     ("artificial-intelligence", "Artificial Intelligence"),
     ("ai", "AI"),
@@ -25,263 +34,88 @@ TAGS = [
     ("robotics", "Robotics"),
 ]
 
-
 BASE_URL = "https://yc-oss.github.io/api/tags"
 
 
-async def fetch_tag(session, slug, tag_name):
+def _as_url(value: str, fallback: str) -> str:
+    candidate = (value or "").strip() or fallback
+    if candidate.startswith("http://") or candidate.startswith("https://"):
+        return candidate
+    return fallback
 
-    url = f"{BASE_URL}/{slug}.json"
 
+def parse_employee_count(raw) -> Optional[int]:
+    if raw in (None, "", "None"):
+        return None
     try:
-
-        async with session.get(url) as response:
-
-            print(
-                f"{tag_name}: HTTP {response.status}"
-            )
-
-            if response.status != 200:
-
-                print(
-                    f"Skipping {tag_name}"
-                )
-
-                return []
-
-            data = await response.json()
-
-            print(
-                f"{tag_name}: "
-                f"{len(data)} records"
-            )
-
-            records = []
-
-            for company in data:
-
-                records.append({
-
-                    "schemaVersion": "1.0",
-
-                    "recordType": "STARTUP",
-
-                    "name": company.get(
-                        "name",
-                        ""
-                    ),
-
-                    "slug": company.get(
-                        "slug",
-                        ""
-                    ),
-
-                    "website": company.get(
-                        "website",
-                        ""
-                    ),
-
-                    "yc_url": company.get(
-                        "url",
-                        ""
-                    ),
-
-                    "description": company.get(
-                        "one_liner",
-                        company.get(
-                            "description",
-                            ""
-                        )
-                    ),
-
-                    "batch": company.get(
-                        "batch",
-                        ""
-                    ),
-
-                    "location": company.get(
-                        "location",
-                        ""
-                    ),
-
-                    "status": company.get(
-                        "status",
-                        ""
-                    ),
-
-                    "yc_tag": tag_name,
-
-                    "source_name":
-                        "Y Combinator",
-
-                    "source_url": url,
-                })
-
-            return records
-
-    except Exception as exc:
-
-        print(
-            f"Error fetching "
-            f"{tag_name}: {exc}"
-        )
-
-        return []
+        value = int(float(raw))
+    except (TypeError, ValueError):
+        return None
+    return value if value >= 0 else None
 
 
-async def fetch_startups():
+async def fetch_startups(limit: int = 1000):
+    logger.info("Collecting AI startups from Y Combinator public tag dumps")
+    resolver = EntityResolver()
+    collected_at = datetime.now(timezone.utc)
+    records = []
 
-    print()
-    print("===================================")
-    print("Building 1000 AI startups")
-    print("===================================")
-
-
-    timeout = aiohttp.ClientTimeout(
-        total=60
-    )
-
-
-    all_records = []
-
-
-    async with aiohttp.ClientSession(
-        timeout=timeout
-    ) as session:
-
+    async with AsyncCrawler(js_fallback=False) as crawler:
         for slug, tag_name in TAGS:
+            url = f"{BASE_URL}/{slug}.json"
+            data = await crawler.fetch_json(url)
+            if not isinstance(data, list):
+                logger.warning("Skipping %s", tag_name)
+                continue
 
-            records = await fetch_tag(
-                session,
-                slug,
-                tag_name
-            )
+            logger.info("%s: %s records", tag_name, len(data))
+            for company in data:
+                name = str(company.get("name") or "").strip()
+                if not name:
+                    continue
 
-            all_records.extend(records)
+                yc_url = str(company.get("url") or "").strip()
+                website = str(company.get("website") or "").strip()
+                source_url = _as_url(yc_url or website, url)
 
-            await asyncio.sleep(0.5)
+                try:
+                    entity = StartupEntity(
+                        source=SourceInfo(name="Y Combinator", url=source_url),
+                        content=StartupContent(
+                            entityName=resolver.canonical_or_self(name),
+                            data=StartupData(
+                                employeeCount=parse_employee_count(
+                                    company.get("team_size")
+                                )
+                            ),
+                        ),
+                        collectedAt=collected_at,
+                    )
+                except ValidationError:
+                    continue
 
+                row = startup_row(entity)
+                row["raw_name"] = name
+                row["website"] = website
+                row["yc_tag"] = tag_name
+                records.append(row)
 
-    print()
-    print(
-        f"Total records collected: "
-        f"{len(all_records)}"
-    )
+            await asyncio.sleep(0.2)
 
-
-    # ---------------------------------
-    # Convert to DataFrame
-    # ---------------------------------
-
-    df = pd.DataFrame(
-        all_records
-    )
-
-
+    df = pd.DataFrame(records)
     if df.empty:
+        raise RuntimeError("No startup records were collected.")
 
-        raise RuntimeError(
-            "No startup records were collected."
-        )
+    df = df.drop_duplicates(subset=["content.entityName"], keep="first")
+    logger.info("Unique AI startups: %s", len(df))
+    if len(df) < limit:
+        raise RuntimeError(f"Only {len(df)} unique AI startups found. Need at least {limit}.")
 
-
-    # ---------------------------------
-    # Clean names
-    # ---------------------------------
-
-    df["name"] = (
-        df["name"]
-        .astype(str)
-        .str.strip()
-    )
-
-
-    df = df[
-        df["name"] != ""
-    ]
-
-
-    # ---------------------------------
-    # Remove duplicate companies
-    # ---------------------------------
-
-    df = df.drop_duplicates(
-        subset=["name"],
-        keep="first"
-    )
-
-
-    print(
-        f"Unique AI startups: "
-        f"{len(df)}"
-    )
-
-
-    # ---------------------------------
-    # Need at least 1000
-    # ---------------------------------
-
-    if len(df) < 1000:
-
-        raise RuntimeError(
-            f"Only {len(df)} unique "
-            f"AI startups found. "
-            f"Need at least 1000."
-        )
-
-
-    # ---------------------------------
-    # Keep exactly 1000
-    # ---------------------------------
-
-    df = df.head(1000)
-
-
-    # ---------------------------------
-    # Save
-    # ---------------------------------
-
-    DATA_DIR.mkdir(
-        exist_ok=True
-    )
-
-
-    df.to_csv(
-        OUTPUT_FILE,
-        index=False,
-        encoding="utf-8"
-    )
-
-
-    print()
-    print("===================================")
-    print("STARTUP DATASET COMPLETE")
-    print("===================================")
-
-    print(
-        f"AI startups saved: "
-        f"{len(df)}"
-    )
-
-    print(
-        f"Unique startup names: "
-        f"{df['name'].nunique()}"
-    )
-
-    print(
-        f"Records with website: "
-        f"{(df['website'].astype(str).str.strip() != '').sum()}"
-    )
-
-    print(
-        f"Output: {OUTPUT_FILE}"
-    )
-
-    print("===================================")
+    df = df.head(limit)
+    df.to_csv(OUTPUT_FILE, index=False, encoding="utf-8")
+    logger.info("Saved %s startups to %s", len(df), OUTPUT_FILE)
+    return df
 
 
 if __name__ == "__main__":
-
-    asyncio.run(
-        fetch_startups()
-    )
+    asyncio.run(fetch_startups())

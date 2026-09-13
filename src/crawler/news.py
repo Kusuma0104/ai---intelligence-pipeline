@@ -8,6 +8,13 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from dateparser import parse
 from src.utils.dates import normalize_date
+from src.crawler.async_crawler import AsyncCrawler
+from src.extraction.llm_orchestrator import LLMOrchestrator
+from src.extraction.schemas import NewsContent, NewsEntity, SourceInfo, news_row
+from src.resolution.entity_resolver import EntityResolver
+from src.utils.logging import get_logger
+
+logger = get_logger("news")
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -16,30 +23,33 @@ OUTPUT_FILE = DATA_DIR / "news_24h.csv"
 
 
 NEWS_SOURCES = [
-    {
-        "name": "OpenAI",
-        "feed": "https://openai.com/news/rss.xml",
-    },
-    {
-        "name": "Google AI",
-        "feed": "https://blog.google/technology/ai/rss/",
-    },
-    {
-        "name": "Hugging Face",
-        "feed": "https://huggingface.co/blog/feed.xml",
-    },
-    {
-        "name": "MarkTechPost",
-        "feed": "https://www.marktechpost.com/feed/",
-    },
-    {
-        "name": "TechCrunch AI",
-        "feed": "https://techcrunch.com/category/artificial-intelligence/feed/",
-    },
+    {"name": "OpenAI", "feed": "https://openai.com/news/rss.xml"},
+    {"name": "Wired AI", "feed": "https://www.wired.com/feed/tag/ai/latest/rss"},
+    {"name": "Ars Technica AI", "feed": "https://arstechnica.com/ai/feed/"},
+    {"name": "The Verge AI", "feed": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"},
+    {"name": "TechCrunch AI", "feed": "https://techcrunch.com/category/artificial-intelligence/feed/"},
 ]
 
-
 def parse_date(entry):
+    # Prefer feedparser's structured date values
+    for field in ("published_parsed", "updated_parsed", "created_parsed"):
+        value = entry.get(field)
+
+        if value:
+            try:
+                return datetime(
+                    value.tm_year,
+                    value.tm_mon,
+                    value.tm_mday,
+                    value.tm_hour,
+                    value.tm_min,
+                    value.tm_sec,
+                    tzinfo=timezone.utc,
+                )
+            except Exception:
+                pass
+
+    # Fallback to textual date fields
     possible_dates = [
         entry.get("published"),
         entry.get("updated"),
@@ -49,20 +59,24 @@ def parse_date(entry):
     for value in possible_dates:
         if not value:
             continue
+
         normalized = normalize_date(value)
 
         if not normalized:
             continue
 
-        parsed = datetime.fromisoformat(normalized)
-        
-        if parsed:
+        try:
+            parsed = datetime.fromisoformat(normalized)
+
             if parsed.tzinfo is None:
                 parsed = parsed.replace(
                     tzinfo=timezone.utc
                 )
 
             return parsed.astimezone(timezone.utc)
+
+        except Exception:
+            continue
 
     return None
 
@@ -175,130 +189,77 @@ async def collect_news():
     )
 
     records = []
+    resolver = EntityResolver()
+    orchestrator = LLMOrchestrator()
+    collected_at = datetime.now(timezone.utc)
 
-    timeout = aiohttp.ClientTimeout(
-        total=60
-    )
-
-    async with aiohttp.ClientSession(
-        timeout=timeout
-    ) as session:
-
+    async with AsyncCrawler() as crawler:
         for source in NEWS_SOURCES:
-
-            print()
-            print(
-                "Source:",
-                source["name"]
-            )
-
+            logger.info("Source: %s", source["name"])
             try:
+                xml = await crawler.fetch_text(source["feed"], allow_js_fallback=False)
+                if not xml:
+                    logger.warning("Skipping source %s", source["name"])
+                    continue
 
-                async with session.get(
-                    source["feed"]
-                ) as response:
+                feed = feedparser.parse(xml)
+                logger.info("Feed entries: %s", len(feed.entries))
+                logger.info("Feed bozo: %s", feed.bozo)
+                logger.info("Feed status: %s", getattr(feed, "status", "unknown"))
 
-                    print(
-                        "HTTP status:",
-                        response.status
-                    )
-
-                    if response.status != 200:
-                        print(
-                            "Skipping source."
-                        )
-                        continue
-
-                    xml = await response.text()
-
-                feed = feedparser.parse(
-                    xml
-                )
-
-                print(
-                    "Feed entries:",
-                    len(feed.entries)
-                )
+                fresh_count = 0
 
                 for entry in feed.entries:
+                    published_dt = parse_date(entry)
 
-                    published_dt = parse_date(
-                        entry
-                    )
-
-                    if not published_dt:
+                    if (
+                        not published_dt
+                        or published_dt < cutoff
+                        or published_dt > now
+                    ):
                         continue
 
-                    if published_dt < cutoff:
-                        continue
+                    fresh_count += 1
 
-                    title = (
-                        entry.get(
-                            "title",
-                            ""
-                        )
-                        .strip()
-                    )
-
-                    url = (
-                        entry.get(
-                            "link",
-                            ""
-                        )
-                        .strip()
-                    )
+                    title = (entry.get("title") or "").strip()
+                    url = (entry.get("link") or "").strip()
 
                     if not title or not url:
                         continue
 
-                    print(
-                        "Fresh:",
-                        title
-                    )
+                    logger.info("Fresh: %s", title)
 
-                    full_text = (
-                        await fetch_article(
-                            session,
-                            url
-                        )
-                    )
 
+                    full_text = await crawler.fetch_text(url)
                     if not full_text:
+                        full_text = clean_text(entry.get("summary") or "")
 
-                        summary = (
-                            entry.get(
-                                "summary",
-                                ""
+                    entity_name = resolver.canonical_or_self(source["name"])
+                    if orchestrator.enabled():
+                        extraction = await orchestrator.extract(full_text[:12000], url)
+                        if extraction:
+                            entity_name = resolver.canonical_or_self(
+                                extraction.entity_name
                             )
-                        )
 
-                        full_text = (
-                            clean_text(
-                                summary
-                            )
-                        )
-
-                    records.append({
-                        "schemaVersion": "1.0",
-                        "recordType": "NEWS",
-                        "title": title,
-                        "published_date": (
-                            published_dt
-                            .isoformat()
+                    news_entity = NewsEntity(
+                        source=SourceInfo(name=source["name"], url=url),
+                        content=NewsContent(
+                            title=title,
+                            published_date=published_dt.isoformat(),
+                            full_text=full_text,
+                            entity_name=entity_name,
                         ),
-                        "source_name": (
-                            source["name"]
-                        ),
-                        "source_url": url,
-                        "full_text": full_text,
-                    })
-
+                        collectedAt=collected_at,
+                    )
+                    records.append(news_row(news_entity))
+                logger.info(
+                    "Source %s fresh entries: %s",
+                    source["name"],
+                    fresh_count
+                    )
             except Exception as exc:
-
-                print(
-                    "Source error:",
-                    exc
-                )
+                logger.warning("Source error for %s: %s", source["name"], exc)
 
     df = pd.DataFrame(
         records
@@ -310,12 +271,12 @@ async def collect_news():
         )
 
     df = df.drop_duplicates(
-        subset=["source_url"],
+        subset=["source.url"],
         keep="first"
     )
 
     df = df.sort_values(
-        "published_date",
+        "content.published_date",
         ascending=False
     )
 
@@ -347,13 +308,13 @@ async def collect_news():
 
     print(
         "Unique sources:",
-        df["source_name"].nunique()
+        df["source.name"].nunique()
     )
 
     print(
         "Records with full text:",
         (
-            df["full_text"]
+            df["content.full_text"]
             .astype(str)
             .str.strip()
             .ne("")

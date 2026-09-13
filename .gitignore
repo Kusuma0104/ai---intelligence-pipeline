@@ -220,3 +220,5 @@ __marimo__/
 data/cache/
 
 data/cache/
+
+data/job_seen_hashes.txt

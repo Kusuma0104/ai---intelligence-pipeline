@@ -2,7 +2,6 @@ import csv
 import re
 from pathlib import Path
 
-from rapidfuzz import fuzz
 
 
 # 50 known AI startups used as the deterministic seed list.
@@ -92,26 +91,40 @@ def normalize_name(name: str) -> str:
 
 def build_aliases():
     """
-    Explicit aliases for common variations.
+    Explicit aliases for common company and product variations.
+    Product aliases are grounded in well-known public product-to-company mappings.
     """
-    return {
-        normalize_name("Open AI"): "OpenAI",
-        normalize_name("OpenAI Inc."): "OpenAI",
-        normalize_name("OpenAI, Inc."): "OpenAI",
-        normalize_name("Anthropic AI"): "Anthropic",
-        normalize_name("Mistral"): "Mistral AI",
-        normalize_name("MistralAI"): "Mistral AI",
-        normalize_name("HuggingFace"): "Hugging Face",
-        normalize_name("ScaleAI"): "Scale AI",
-        normalize_name("StabilityAI"): "Stability AI",
-        normalize_name("Character.AI"): "Character AI",
-        normalize_name("Eleven Labs"): "ElevenLabs",
-        normalize_name("Weights and Biases"): "Weights & Biases",
-        normalize_name("Copy AI"): "Copy.ai",
-        normalize_name("Figure"): "Figure AI",
-        normalize_name("Physical Intelligence AI"): "Physical Intelligence",
-        normalize_name("Safe Superintelligence Inc"): "Safe Superintelligence",
+    pairs = {
+        "Open AI": "OpenAI",
+        "OpenAI Inc.": "OpenAI",
+        "OpenAI, Inc.": "OpenAI",
+        "ChatGPT": "OpenAI",
+        "Sora": "OpenAI",
+        "Anthropic AI": "Anthropic",
+        "Claude": "Anthropic",
+        "Mistral": "Mistral AI",
+        "MistralAI": "Mistral AI",
+        "Le Chat": "Mistral AI",
+        "HuggingFace": "Hugging Face",
+        "ScaleAI": "Scale AI",
+        "StabilityAI": "Stability AI",
+        "Stable Diffusion": "Stability AI",
+        "Character.AI": "Character AI",
+        "Eleven Labs": "ElevenLabs",
+        "Weights and Biases": "Weights & Biases",
+        "W&B": "Weights & Biases",
+        "Copy AI": "Copy.ai",
+        "Figure": "Figure AI",
+        "Physical Intelligence AI": "Physical Intelligence",
+        "Safe Superintelligence Inc": "Safe Superintelligence",
+        "SSI": "Safe Superintelligence",
+        "Grok": "xAI",
+        "Cursor AI": "Cursor",
+        "Perplexity AI": "Perplexity",
+        "LangChain": "LangChain",
+        "Together Computer": "Together AI",
     }
+    return {normalize_name(raw): canonical for raw, canonical in pairs.items()}
 
 
 class EntityResolver:
@@ -166,11 +179,9 @@ class EntityResolver:
                 "score": 100.0,
             }
 
-        # 3. Deterministic fuzzy matching.
-        best_name = None
-        best_score = 0.0
 
-        for seed_name in self.seed_names:
+
+
             seed_normalized = normalize_name(seed_name)
 
             score = fuzz.ratio(
@@ -180,26 +191,22 @@ class EntityResolver:
 
             if score > best_score:
                 best_score = score
-                best_name = seed_name
+                best_name = seed_nam
 
-        # High threshold to avoid unsafe false matches.
-        if best_score >= 90:
-            return {
-                "input_name": input_name,
-                "canonical_name": best_name,
-                "match_type": "FUZZY",
-                "score": round(best_score, 2),
-            }
 
         return {
-            "input_name": input_name,
-            "canonical_name": None,
-            "match_type": "NO_MATCH",
-            "score": round(best_score, 2),
+        "input_name": input_name,
+        "canonical_name": None,
+        "match_type": "NO_MATCH",
+        "score": 0.0,
         }
 
     def resolve_many(self, names):
         return [self.resolve(name) for name in names]
+
+    def canonical_or_self(self, name: str) -> str:
+        result = self.resolve(name)
+        return result["canonical_name"] or (name or "").strip()
 
     def save_mapping_log(self, results, output_path="data/entity_mapping_log.csv"):
         path = Path(output_path)
@@ -224,31 +231,62 @@ class EntityResolver:
             writer.writerows(results)
 
 
+def resolve_dataset(names, resolver=None):
+    resolver = resolver or EntityResolver()
+    seen = []
+    unique = []
+    for name in names:
+        value = str(name or "").strip()
+        if value and value not in seen:
+            seen.append(value)
+            unique.append(value)
+    return resolver.resolve_many(unique)
+
+
 def main():
+    from src.config import DATA_DIR
+    import pandas as pd
+
     resolver = EntityResolver()
+    names = []
 
-    test_names = [
-        "OpenAI",
-        "Open AI",
-        "OpenAI Inc.",
-        "Anthropic",
-        "MistralAI",
-        "HuggingFace",
-        "Scale AI",
-        "Completely Unknown Company",
-    ]
+    startups = DATA_DIR / "startups_1000.csv"
+    products = DATA_DIR / "products_1000.csv"
+    jobs = DATA_DIR / "jobs_24h.csv"
 
-    results = resolver.resolve_many(test_names)
+    if startups.exists():
+        df = pd.read_csv(startups)
+        col = "content.entityName" if "content.entityName" in df.columns else "name"
+        names.extend(df[col].dropna().astype(str).tolist())
 
-    print("\nEntity Resolution Results:\n")
+    if products.exists():
+        df = pd.read_csv(products)
+        for col in ("content.startupName", "name"):
+            if col in df.columns:
+                names.extend(df[col].dropna().astype(str).tolist())
+                break
 
-    for result in results:
-        print(result)
+    if jobs.exists():
+        df = pd.read_csv(jobs)
+        col = "content.company" if "content.company" in df.columns else "company"
+        if col in df.columns:
+            names.extend(df[col].dropna().astype(str).tolist())
 
-    resolver.save_mapping_log(results)
+    if not names:
+        names = [
+            "OpenAI",
+            "Open AI",
+            "OpenAI Inc.",
+            "Anthropic",
+            "MistralAI",
+            "HuggingFace",
+            "Scale AI",
+            "Completely Unknown Company",
+        ]
 
-    print("\nMapping log saved to:")
-    print("data/entity_mapping_log.csv")
+    results = resolve_dataset(names, resolver)
+    resolver.save_mapping_log(results, DATA_DIR / "entity_mapping_log.csv")
+    print(f"Mapped {len(results)} unique names -> data/entity_mapping_log.csv")
 
 
 if __name__ == "__main__":

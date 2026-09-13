@@ -1,9 +1,2046 @@
 input_name,canonical_name,match_type,score
-OpenAI,OpenAI,EXACT,100.0
-Open AI,OpenAI,EXACT,100.0
-OpenAI Inc.,OpenAI,EXACT,100.0
-Anthropic,Anthropic,EXACT,100.0
-MistralAI,Mistral AI,EXACT,100.0
-HuggingFace,Hugging Face,EXACT,100.0
+Directed Edge,,NO_MATCH,0.0
+JustSpotted,,NO_MATCH,0.0
+Canopy Labs,,NO_MATCH,0.0
+Semantics3,,NO_MATCH,0.0
+Casetext,,NO_MATCH,0.0
+CareMessage,,NO_MATCH,0.0
+OpenCurriculum,,NO_MATCH,0.0
+Checkr,,NO_MATCH,0.0
+SalesSift,,NO_MATCH,0.0
+Weave,,NO_MATCH,0.0
+Qventus,,NO_MATCH,0.0
+20n,,NO_MATCH,0.0
+Akido Labs,,NO_MATCH,0.0
+Zeitview,,NO_MATCH,0.0
+Yhat,,NO_MATCH,0.0
+Dabble,,NO_MATCH,0.0
+Tara AI,,NO_MATCH,0.0
+Mashgin,,NO_MATCH,0.0
+ROSS Intelligence,,NO_MATCH,0.0
+Reduced Energy Microsystems,,NO_MATCH,0.0
+iSono Health,,NO_MATCH,0.0
+Algoriz,,NO_MATCH,0.0
+Pulpix,,NO_MATCH,0.0
+Superside,,NO_MATCH,0.0
+Gecko Robotics,,NO_MATCH,0.0
+Caper,,NO_MATCH,0.0
+Sendbird,,NO_MATCH,0.0
+Nova,,NO_MATCH,0.0
+Farmstead,,NO_MATCH,0.0
+Sway Finance,,NO_MATCH,0.0
+OneChronos,,NO_MATCH,0.0
+garten,,NO_MATCH,0.0
+Airo Health,,NO_MATCH,0.0
+Synvivia,,NO_MATCH,0.0
+Seerslab,,NO_MATCH,0.0
+Miso,,NO_MATCH,0.0
+Saleswhale,,NO_MATCH,0.0
 Scale AI,Scale AI,EXACT,100.0
-Completely Unknown Company,,NO_MATCH,40.0
+People.ai,,NO_MATCH,0.0
+Voiceops,,NO_MATCH,0.0
+Speak,,NO_MATCH,0.0
+Scribe,,NO_MATCH,0.0
+Pit.AI,,NO_MATCH,0.0
+MDalgorithms Inc.,,NO_MATCH,0.0
+RankScience,,NO_MATCH,0.0
+Ambient.ai,,NO_MATCH,0.0
+Penny,,NO_MATCH,0.0
+"Veryfi, Inc.",,NO_MATCH,0.0
+Tetra,,NO_MATCH,0.0
+BIOS Health,,NO_MATCH,0.0
+Bicycle AI,,NO_MATCH,0.0
+Helix Nanotechnologies,,NO_MATCH,0.0
+ScopeAI,,NO_MATCH,0.0
+VergeSense,,NO_MATCH,0.0
+Darmiyan,,NO_MATCH,0.0
+Mystro,,NO_MATCH,0.0
+Semantix,,NO_MATCH,0.0
+Plasticity,,NO_MATCH,0.0
+D-ID,,NO_MATCH,0.0
+Percept.AI,,NO_MATCH,0.0
+Sourceress,,NO_MATCH,0.0
+May Mobility,,NO_MATCH,0.0
+Commissary Club (formerly 70 Million Jobs),,NO_MATCH,0.0
+AssemblyAI,,NO_MATCH,0.0
+Lyrebird,,NO_MATCH,0.0
+10 By 10,,NO_MATCH,0.0
+Proven Group,,NO_MATCH,0.0
+Precious,,NO_MATCH,0.0
+Spellbrush,,NO_MATCH,0.0
+Jasper.ai,,NO_MATCH,0.0
+Promise,,NO_MATCH,0.0
+Nuvocargo,,NO_MATCH,0.0
+Cognition IP,,NO_MATCH,0.0
+Vathys,,NO_MATCH,0.0
+Naborly,,NO_MATCH,0.0
+Weekend (fmr. Volley),,NO_MATCH,0.0
+SharpestMinds,,NO_MATCH,0.0
+Orangewood Labs,,NO_MATCH,0.0
+Point API,,NO_MATCH,0.0
+Phiar,,NO_MATCH,0.0
+OWNY,,NO_MATCH,0.0
+Within,,NO_MATCH,0.0
+"numericcal, inc.",,NO_MATCH,0.0
+Data Driven Bioscience,,NO_MATCH,0.0
+Inscribe,,NO_MATCH,0.0
+Quickchat AI,,NO_MATCH,0.0
+Rain Neuromorphics,,NO_MATCH,0.0
+Eden,,NO_MATCH,0.0
+BrainHi,,NO_MATCH,0.0
+Mutiny,,NO_MATCH,0.0
+Leena AI,,NO_MATCH,0.0
+Kunduz,,NO_MATCH,0.0
+Flockjay,,NO_MATCH,0.0
+Centaur,,NO_MATCH,0.0
+Windsor,,NO_MATCH,0.0
+Tailornova/Couturme,,NO_MATCH,0.0
+Community Phone Company,,NO_MATCH,0.0
+Sapling.ai,,NO_MATCH,0.0
+AI Insurance,,NO_MATCH,0.0
+Evo.Do,,NO_MATCH,0.0
+Docucharm,,NO_MATCH,0.0
+Askdata,,NO_MATCH,0.0
+Superorder,,NO_MATCH,0.0
+Autodial prev Qwest,,NO_MATCH,0.0
+Glide,,NO_MATCH,0.0
+Sublime Black,,NO_MATCH,0.0
+Mars Auto,,NO_MATCH,0.0
+Tailor-ED,,NO_MATCH,0.0
+"OutRival, Inc.",,NO_MATCH,0.0
+Playground,,NO_MATCH,0.0
+Palifer,,NO_MATCH,0.0
+Symplex,,NO_MATCH,0.0
+Kraftful,,NO_MATCH,0.0
+Well Principled,,NO_MATCH,0.0
+Lantern,,NO_MATCH,0.0
+GEn1E Lifesciences,,NO_MATCH,0.0
+Embrace,,NO_MATCH,0.0
+Yummy Future,,NO_MATCH,0.0
+Milo,,NO_MATCH,0.0
+Ramen VR,,NO_MATCH,0.0
+Traces,,NO_MATCH,0.0
+Flowbot,,NO_MATCH,0.0
+Motion,,NO_MATCH,0.0
+Flowglad,,NO_MATCH,0.0
+Phonic,,NO_MATCH,0.0
+StratumAI,,NO_MATCH,0.0
+FitnessAI,,NO_MATCH,0.0
+Taiv,,NO_MATCH,0.0
+Glisten AI,,NO_MATCH,0.0
+Ardis AI,,NO_MATCH,0.0
+Perceptive Technologies,,NO_MATCH,0.0
+Aden,,NO_MATCH,0.0
+Turing Labs Inc.,,NO_MATCH,0.0
+QueryPie AI,,NO_MATCH,0.0
+Skypher,,NO_MATCH,0.0
+DeepSource,,NO_MATCH,0.0
+PillarPlus,,NO_MATCH,0.0
+Zumo Labs,,NO_MATCH,0.0
+Overfit,,NO_MATCH,0.0
+BeGo,,NO_MATCH,0.0
+Recall.ai,,NO_MATCH,0.0
+Atmo,,NO_MATCH,0.0
+Airbyte,,NO_MATCH,0.0
+Blue Onion,,NO_MATCH,0.0
+Shuttle,,NO_MATCH,0.0
+Kernal Biologics,,NO_MATCH,0.0
+Omni,,NO_MATCH,0.0
+Atomic,,NO_MATCH,0.0
+Hyper Online,,NO_MATCH,0.0
+Cohere,Cohere,EXACT,100.0
+Taktile,,NO_MATCH,0.0
+AI.Fashion,,NO_MATCH,0.0
+Glimpse,,NO_MATCH,0.0
+Fieldguide,,NO_MATCH,0.0
+Heron,,NO_MATCH,0.0
+cloud humans,,NO_MATCH,0.0
+Atomic Industries,,NO_MATCH,0.0
+authzed,,NO_MATCH,0.0
+Quadrant Eye,,NO_MATCH,0.0
+SBX Robotics,,NO_MATCH,0.0
+arnata,,NO_MATCH,0.0
+Pibit.ai,,NO_MATCH,0.0
+Vogent,,NO_MATCH,0.0
+Flux Auto,,NO_MATCH,0.0
+Fountain9,,NO_MATCH,0.0
+Pragmatic Leaders (Ankai Inc),,NO_MATCH,0.0
+Sivo,,NO_MATCH,0.0
+Supadock,,NO_MATCH,0.0
+Emerge Tools,,NO_MATCH,0.0
+Parsagon,,NO_MATCH,0.0
+Alinea,,NO_MATCH,0.0
+Vapi,,NO_MATCH,0.0
+Mindee,,NO_MATCH,0.0
+Popl,,NO_MATCH,0.0
+True3D,,NO_MATCH,0.0
+FirstSupport.ai,,NO_MATCH,0.0
+Rinsed,,NO_MATCH,0.0
+Nimbus,,NO_MATCH,0.0
+Enable Us,,NO_MATCH,0.0
+InpharmD,,NO_MATCH,0.0
+Tint,,NO_MATCH,0.0
+TaoFi,,NO_MATCH,0.0
+Venu AI,,NO_MATCH,0.0
+Compose.ai,,NO_MATCH,0.0
+Codeball,,NO_MATCH,0.0
+Dataherald,,NO_MATCH,0.0
+Rejoy Health,,NO_MATCH,0.0
+Treinta,,NO_MATCH,0.0
+Spline,,NO_MATCH,0.0
+BusinessOnBot,,NO_MATCH,0.0
+Mystic,,NO_MATCH,0.0
+MarqVision,,NO_MATCH,0.0
+Routine,,NO_MATCH,0.0
+MindPortal,,NO_MATCH,0.0
+Waydev,,NO_MATCH,0.0
+Ollama,,NO_MATCH,0.0
+Humance,,NO_MATCH,0.0
+Openlayer,,NO_MATCH,0.0
+Slope,,NO_MATCH,0.0
+Mindstate Design Labs,,NO_MATCH,0.0
+Serif Health,,NO_MATCH,0.0
+Abstra,,NO_MATCH,0.0
+Replo,,NO_MATCH,0.0
+FirstQuadrant,,NO_MATCH,0.0
+Affogato AI,,NO_MATCH,0.0
+zaz⚡️os,,NO_MATCH,0.0
+Swipe,,NO_MATCH,0.0
+Neodocs,,NO_MATCH,0.0
+MobileBoost,,NO_MATCH,0.0
+RGI Labs,,NO_MATCH,0.0
+Sleek,,NO_MATCH,0.0
+Bite Ninja,,NO_MATCH,0.0
+Anakin,,NO_MATCH,0.0
+Dailybot,,NO_MATCH,0.0
+Tavus,,NO_MATCH,0.0
+Konta.com,,NO_MATCH,0.0
+Verihubs,,NO_MATCH,0.0
+Secoda,,NO_MATCH,0.0
+SalaryBox,,NO_MATCH,0.0
+Sentiyen,,NO_MATCH,0.0
+SenpAI.GG,,NO_MATCH,0.0
+Warpfy,,NO_MATCH,0.0
+DigiBuild,,NO_MATCH,0.0
+Milky Way AI,,NO_MATCH,0.0
+OneSchema,,NO_MATCH,0.0
+Mine,,NO_MATCH,0.0
+Zensors,,NO_MATCH,0.0
+aSim,,NO_MATCH,0.0
+Mentum,,NO_MATCH,0.0
+Writesonic,,NO_MATCH,0.0
+Revery AI,,NO_MATCH,0.0
+Tenyks,,NO_MATCH,0.0
+Adni,,NO_MATCH,0.0
+Hudson Labs (formerly Bedrock AI),,NO_MATCH,0.0
+Vibe Kanban,,NO_MATCH,0.0
+Caire Health,,NO_MATCH,0.0
+Squire.ai,,NO_MATCH,0.0
+Spoken,,NO_MATCH,0.0
+Adravision,,NO_MATCH,0.0
+Medium Biosciences,,NO_MATCH,0.0
+Safer Management,,NO_MATCH,0.0
+Sully.ai,,NO_MATCH,0.0
+Andi,,NO_MATCH,0.0
+TigerEye,,NO_MATCH,0.0
+Moots,,NO_MATCH,0.0
+Capuchin,,NO_MATCH,0.0
+Trellus,,NO_MATCH,0.0
+WeReno,,NO_MATCH,0.0
+PromptLoop,,NO_MATCH,0.0
+Cozmo AI,,NO_MATCH,0.0
+Sota2,,NO_MATCH,0.0
+Stably AI (Orca),,NO_MATCH,0.0
+CoffeeAI,,NO_MATCH,0.0
+InferEdge,,NO_MATCH,0.0
+Industrial Next,,NO_MATCH,0.0
+Rownd,,NO_MATCH,0.0
+Kaso,,NO_MATCH,0.0
+Iron Leap,,NO_MATCH,0.0
+Unlayer,,NO_MATCH,0.0
+Fintelite,,NO_MATCH,0.0
+MosaicVoice,,NO_MATCH,0.0
+Beam,,NO_MATCH,0.0
+Sophys,,NO_MATCH,0.0
+Armilla AI,,NO_MATCH,0.0
+Dart,,NO_MATCH,0.0
+Emobi,,NO_MATCH,0.0
+Reforged Labs,,NO_MATCH,0.0
+T3 Chat,,NO_MATCH,0.0
+Speechly,,NO_MATCH,0.0
+SkyLink,,NO_MATCH,0.0
+RefineTrain AI,,NO_MATCH,0.0
+NearWave,,NO_MATCH,0.0
+Siftly,,NO_MATCH,0.0
+Cogram,,NO_MATCH,0.0
+Cotera,,NO_MATCH,0.0
+Strong Compute,,NO_MATCH,0.0
+"Sendme, Inc",,NO_MATCH,0.0
+goodfin,,NO_MATCH,0.0
+Broccoli AI,,NO_MATCH,0.0
+Theneo,,NO_MATCH,0.0
+AvairSense,,NO_MATCH,0.0
+IoTFlows Inc,,NO_MATCH,0.0
+HOAi,,NO_MATCH,0.0
+Spade,,NO_MATCH,0.0
+Housewarming,,NO_MATCH,0.0
+RTHM,,NO_MATCH,0.0
+Humand,,NO_MATCH,0.0
+Postal,,NO_MATCH,0.0
+AYC Fund,,NO_MATCH,0.0
+Heptabase,,NO_MATCH,0.0
+Nara,,NO_MATCH,0.0
+Query Vary,,NO_MATCH,0.0
+Impossible Metals,,NO_MATCH,0.0
+Cellbyte,,NO_MATCH,0.0
+GovDash,,NO_MATCH,0.0
+KorrAI,,NO_MATCH,0.0
+Flike,,NO_MATCH,0.0
+Reality Defender,,NO_MATCH,0.0
+WhiteLab Genomics,,NO_MATCH,0.0
+Elessar,,NO_MATCH,0.0
+Julius,,NO_MATCH,0.0
+Ciro,,NO_MATCH,0.0
+Truva,,NO_MATCH,0.0
+Two Dots,,NO_MATCH,0.0
+Bunting Labs,,NO_MATCH,0.0
+Cerrion,,NO_MATCH,0.0
+Champ,,NO_MATCH,0.0
+Roxels,,NO_MATCH,0.0
+Fetii,,NO_MATCH,0.0
+Craze,,NO_MATCH,0.0
+NuMind,,NO_MATCH,0.0
+Overwatch,,NO_MATCH,0.0
+Raven,,NO_MATCH,0.0
+Flair Labs,,NO_MATCH,0.0
+Unify,,NO_MATCH,0.0
+Typewise,,NO_MATCH,0.0
+NewsCatcher,,NO_MATCH,0.0
+100x,,NO_MATCH,0.0
+Thera,,NO_MATCH,0.0
+Peoplebox.ai,,NO_MATCH,0.0
+Coris,,NO_MATCH,0.0
+AnythingLLM,,NO_MATCH,0.0
+FlyCode,,NO_MATCH,0.0
+Maya Labs,,NO_MATCH,0.0
+Rima AI (formerly Garage),,NO_MATCH,0.0
+Quinn,,NO_MATCH,0.0
+Cobbery,,NO_MATCH,0.0
+Feather,,NO_MATCH,0.0
+Artemis Search,,NO_MATCH,0.0
+Unthread,,NO_MATCH,0.0
+HOMLI,,NO_MATCH,0.0
+Jasmine Energy,,NO_MATCH,0.0
+Wondercraft,,NO_MATCH,0.0
+Clearline,,NO_MATCH,0.0
+Monterey AI,,NO_MATCH,0.0
+Pump.co,,NO_MATCH,0.0
+Knowtex,,NO_MATCH,0.0
+CAPSULE,,NO_MATCH,0.0
+InVision Medical Technology,,NO_MATCH,0.0
+Cambio,,NO_MATCH,0.0
+Axle,,NO_MATCH,0.0
+Chima,,NO_MATCH,0.0
+Integrated Reasoning,,NO_MATCH,0.0
+Dev Tools AI,,NO_MATCH,0.0
+Rubbrband,,NO_MATCH,0.0
+Reflex,,NO_MATCH,0.0
+Linum,,NO_MATCH,0.0
+Layup,,NO_MATCH,0.0
+Credal.ai,,NO_MATCH,0.0
+Rollstack,,NO_MATCH,0.0
+Novelcare,,NO_MATCH,0.0
+Concourse,,NO_MATCH,0.0
+Latent,,NO_MATCH,0.0
+Lynx,,NO_MATCH,0.0
+Rubber Ducky Labs,,NO_MATCH,0.0
+Pair AI,,NO_MATCH,0.0
+Ohm,,NO_MATCH,0.0
+Double – Coding Copilot,,NO_MATCH,0.0
+Glass Health,,NO_MATCH,0.0
+Versive,,NO_MATCH,0.0
+Narrative,,NO_MATCH,0.0
+Gluetrail,,NO_MATCH,0.0
+infra.new,,NO_MATCH,0.0
+PoplarML,,NO_MATCH,0.0
+Cosine,,NO_MATCH,0.0
+Gooseworks,,NO_MATCH,0.0
+No Cap,,NO_MATCH,0.0
+Dream3D,,NO_MATCH,0.0
+DataSuite,,NO_MATCH,0.0
+co.dev,,NO_MATCH,0.0
+Aqueduct,,NO_MATCH,0.0
+Velos,,NO_MATCH,0.0
+Booth AI,,NO_MATCH,0.0
+Orchid,,NO_MATCH,0.0
+1stCollab,,NO_MATCH,0.0
+Magicflow 𐂂,,NO_MATCH,0.0
+Variance,,NO_MATCH,0.0
+Fintool,,NO_MATCH,0.0
+Boundary,,NO_MATCH,0.0
+FactIQ,,NO_MATCH,0.0
+Shortbread,,NO_MATCH,0.0
+Hippo Scribe,,NO_MATCH,0.0
+CombineHealth,,NO_MATCH,0.0
+SuperKalam,,NO_MATCH,0.0
+Coldreach,,NO_MATCH,0.0
+Corgi Labs,,NO_MATCH,0.0
+DAGWorks Inc.,,NO_MATCH,0.0
+Maxi,,NO_MATCH,0.0
+Decohere,,NO_MATCH,0.0
+CodeParrot AI,,NO_MATCH,0.0
+Conduit,,NO_MATCH,0.0
+Berry,,NO_MATCH,0.0
+Interlock,,NO_MATCH,0.0
+rex.fit,,NO_MATCH,0.0
+Benchmark,,NO_MATCH,0.0
+Pier,,NO_MATCH,0.0
+Type,,NO_MATCH,0.0
+Vendora,,NO_MATCH,0.0
+LiteLLM,,NO_MATCH,0.0
+Automat,,NO_MATCH,0.0
+Yuma AI,,NO_MATCH,0.0
+Vaero,,NO_MATCH,0.0
+kapa.ai,,NO_MATCH,0.0
+Kino AI,,NO_MATCH,0.0
+Reworkd,,NO_MATCH,0.0
+Branch AI,,NO_MATCH,0.0
+Ora AI,,NO_MATCH,0.0
+Xeol,,NO_MATCH,0.0
+Clearest Health,,NO_MATCH,0.0
+Elyos AI,,NO_MATCH,0.0
+Deasy Labs,,NO_MATCH,0.0
+Sohar Health,,NO_MATCH,0.0
+Pointhound,,NO_MATCH,0.0
+Casca,,NO_MATCH,0.0
+Atla,,NO_MATCH,0.0
+Contour,,NO_MATCH,0.0
+Talc,,NO_MATCH,0.0
+CORE,,NO_MATCH,0.0
+GreenTally,,NO_MATCH,0.0
+Spine AI,,NO_MATCH,0.0
+Baud,,NO_MATCH,0.0
+SID,,NO_MATCH,0.0
+Venta AI,,NO_MATCH,0.0
+Bronco AI,,NO_MATCH,0.0
+Arcimus,,NO_MATCH,0.0
+Serra,,NO_MATCH,0.0
+Dialtone,,NO_MATCH,0.0
+Cardinal Gray,,NO_MATCH,0.0
+Skyvern,,NO_MATCH,0.0
+Decoda Health,,NO_MATCH,0.0
+VetRec,,NO_MATCH,0.0
+Lysto,,NO_MATCH,0.0
+MediSearch,,NO_MATCH,0.0
+Bretton AI,,NO_MATCH,0.0
+Vizly,,NO_MATCH,0.0
+AgentCollect,,NO_MATCH,0.0
+Continue,,NO_MATCH,0.0
+sizeless,,NO_MATCH,0.0
+Pincites,,NO_MATCH,0.0
+Gleam,,NO_MATCH,0.0
+Slicker,,NO_MATCH,0.0
+Sola,,NO_MATCH,0.0
+Baserun,,NO_MATCH,0.0
+VectorShift,,NO_MATCH,0.0
+DisputeNinja,,NO_MATCH,0.0
+Inari,,NO_MATCH,0.0
+Silimate,,NO_MATCH,0.0
+Sweep,,NO_MATCH,0.0
+sudocode,,NO_MATCH,0.0
+Inventive AI,,NO_MATCH,0.0
+Langdock,,NO_MATCH,0.0
+Movley,,NO_MATCH,0.0
+Terracotta AI,,NO_MATCH,0.0
+Tiptap,,NO_MATCH,0.0
+Minded,,NO_MATCH,0.0
+Quill Bills,,NO_MATCH,0.0
+Cair Health,,NO_MATCH,0.0
+Webhound,,NO_MATCH,0.0
+Roame,,NO_MATCH,0.0
+Kips Health,,NO_MATCH,0.0
+Inconvo,,NO_MATCH,0.0
+FlowiseAI,,NO_MATCH,0.0
+Giga,,NO_MATCH,0.0
+AiSDR,,NO_MATCH,0.0
+Simbie AI,,NO_MATCH,0.0
+Mocha,,NO_MATCH,0.0
+Twine,,NO_MATCH,0.0
+Structured Labs,,NO_MATCH,0.0
+Nowadays,,NO_MATCH,0.0
+Morph,,NO_MATCH,0.0
+Wattson Health,,NO_MATCH,0.0
+truemetrics,,NO_MATCH,0.0
+Autotab,,NO_MATCH,0.0
+Opensteer,,NO_MATCH,0.0
+Tempo,,NO_MATCH,0.0
+Orbio Earth,,NO_MATCH,0.0
+Gumloop,,NO_MATCH,0.0
+DryMerge,,NO_MATCH,0.0
+OpenPipe,,NO_MATCH,0.0
+RadMate AI,,NO_MATCH,0.0
+Scritch,,NO_MATCH,0.0
+Legora,,NO_MATCH,0.0
+ego,,NO_MATCH,0.0
+Greptile,,NO_MATCH,0.0
+Happenstance,,NO_MATCH,0.0
+Duckie,,NO_MATCH,0.0
+Tekton Dynamics,,NO_MATCH,0.0
+Momentic,,NO_MATCH,0.0
+Quary,,NO_MATCH,0.0
+Pretzel AI,,NO_MATCH,0.0
+nCompass Technologies,,NO_MATCH,0.0
+Keystroke,,NO_MATCH,0.0
+Pivot Robotics,,NO_MATCH,0.0
+Agentic Labs,,NO_MATCH,0.0
+Breez Labs,,NO_MATCH,0.0
+PointOne,,NO_MATCH,0.0
+Arini,,NO_MATCH,0.0
+Artisan,,NO_MATCH,0.0
+Eggnog,,NO_MATCH,0.0
+Ecliptor,,NO_MATCH,0.0
+Panelytic,,NO_MATCH,0.0
+Blume Benefits,,NO_MATCH,0.0
+Tusk,,NO_MATCH,0.0
+Attunement,,NO_MATCH,0.0
+StarJar,,NO_MATCH,0.0
+Meticulate,,NO_MATCH,0.0
+Guide Labs,,NO_MATCH,0.0
+Speck,,NO_MATCH,0.0
+Polished,,NO_MATCH,0.0
+LemonSlice,,NO_MATCH,0.0
+Decipher AI,,NO_MATCH,0.0
+Toolify,,NO_MATCH,0.0
+Clarion,,NO_MATCH,0.0
+Tamarind Bio,,NO_MATCH,0.0
+GloGlo,,NO_MATCH,0.0
+PandasAI,,NO_MATCH,0.0
+Parallel,,NO_MATCH,0.0
+Fuse,,NO_MATCH,0.0
+Feldy,,NO_MATCH,0.0
+Firebender,,NO_MATCH,0.0
+Resonance,,NO_MATCH,0.0
+Centralize,,NO_MATCH,0.0
+Solari AI,,NO_MATCH,0.0
+Ellipsis,,NO_MATCH,0.0
+Browser Buddy,,NO_MATCH,0.0
+Superagent,,NO_MATCH,0.0
+Preloop,,NO_MATCH,0.0
+Andy AI,,NO_MATCH,0.0
+Overeasy,,NO_MATCH,0.0
+OffDeal,,NO_MATCH,0.0
+Abel,,NO_MATCH,0.0
+EdgeTrace,,NO_MATCH,0.0
+Manifold Freight,,NO_MATCH,0.0
+ProSights,,NO_MATCH,0.0
+Raindrop,,NO_MATCH,0.0
+Diana,,NO_MATCH,0.0
+Risotto,,NO_MATCH,0.0
+JustAI,,NO_MATCH,0.0
+BetterBasket,,NO_MATCH,0.0
+Model ML,,NO_MATCH,0.0
+Ligo Biosciences,,NO_MATCH,0.0
+Focal,,NO_MATCH,0.0
+Brainbase Labs,,NO_MATCH,0.0
+Alai,,NO_MATCH,0.0
+Thorntale,,NO_MATCH,0.0
+Openmart,,NO_MATCH,0.0
+Shepherd,,NO_MATCH,0.0
+Downlink,,NO_MATCH,0.0
+camelAI,,NO_MATCH,0.0
+Rove,,NO_MATCH,0.0
+Retell AI,,NO_MATCH,0.0
+Adapted,,NO_MATCH,0.0
+Deepnight,,NO_MATCH,0.0
+Aqua Voice,,NO_MATCH,0.0
+Basepilot,,NO_MATCH,0.0
+Veles,,NO_MATCH,0.0
+Lumona,,NO_MATCH,0.0
+Arcane,,NO_MATCH,0.0
+Senso,,NO_MATCH,0.0
+Silogy,,NO_MATCH,0.0
+Evolvere BioSciences,,NO_MATCH,0.0
+Piramidal,,NO_MATCH,0.0
+VoxOps AI,,NO_MATCH,0.0
+Integuru,,NO_MATCH,0.0
+Forge,,NO_MATCH,0.0
+Tower,,NO_MATCH,0.0
+kater.ai,,NO_MATCH,0.0
+Yarn,,NO_MATCH,0.0
+InspectMind AI,,NO_MATCH,0.0
+GetCrux,,NO_MATCH,0.0
+Million,,NO_MATCH,0.0
+Forge Rewards,,NO_MATCH,0.0
+Marr Labs,,NO_MATCH,0.0
+Coval,,NO_MATCH,0.0
+Ångström AI,,NO_MATCH,0.0
+Domu Technology Inc.,,NO_MATCH,0.0
+Educato,,NO_MATCH,0.0
+ProhostAI,,NO_MATCH,0.0
+Entangl,,NO_MATCH,0.0
+Invaria,,NO_MATCH,0.0
+Corgi Insurance,,NO_MATCH,0.0
+Maitai,,NO_MATCH,0.0
+Sorcerer,,NO_MATCH,0.0
+FirstWork,,NO_MATCH,0.0
+Decisional AI,,NO_MATCH,0.0
+Unbound,,NO_MATCH,0.0
+Silurian,,NO_MATCH,0.0
+NetworkOcean,,NO_MATCH,0.0
+Willow,,NO_MATCH,0.0
+Scape,,NO_MATCH,0.0
+Storia AI,,NO_MATCH,0.0
+Elevate,,NO_MATCH,0.0
+RunLocal AI,,NO_MATCH,0.0
+CodeViz,,NO_MATCH,0.0
+Lore,,NO_MATCH,0.0
+MinusX,,NO_MATCH,0.0
+Tivara,,NO_MATCH,0.0
+Kenley,,NO_MATCH,0.0
+Stormy,,NO_MATCH,0.0
+Plume,,NO_MATCH,0.0
+Modus,,NO_MATCH,0.0
+Lighthouz AI,,NO_MATCH,0.0
+TaxGPT,,NO_MATCH,0.0
+Benchify,,NO_MATCH,0.0
+Anthrogen,,NO_MATCH,0.0
+Aluna,,NO_MATCH,0.0
+Ontra Mobility,,NO_MATCH,0.0
+Overstand Labs,,NO_MATCH,0.0
+Clearly AI,,NO_MATCH,0.0
+Anara,,NO_MATCH,0.0
+Planbase,,NO_MATCH,0.0
+Redouble AI,,NO_MATCH,0.0
+Drillbit,,NO_MATCH,0.0
+winfunc,,NO_MATCH,0.0
+Opslane,,NO_MATCH,0.0
+Conductor Quantum,,NO_MATCH,0.0
+Mage Legal,,NO_MATCH,0.0
+Remade,,NO_MATCH,0.0
+Zeit AI,,NO_MATCH,0.0
+Kura AI,,NO_MATCH,0.0
+Parley,,NO_MATCH,0.0
+Soff,,NO_MATCH,0.0
+Brighterway,,NO_MATCH,0.0
+The Forecasting Company,,NO_MATCH,0.0
+Presti AI,,NO_MATCH,0.0
+Sensei,,NO_MATCH,0.0
+Simple AI,,NO_MATCH,0.0
+YouShift,,NO_MATCH,0.0
+Baseline AI,,NO_MATCH,0.0
+Thyme,,NO_MATCH,0.0
+Handled,,NO_MATCH,0.0
+Bluedoor,,NO_MATCH,0.0
+ZeroPath,,NO_MATCH,0.0
+Propaya,,NO_MATCH,0.0
+Polymet,,NO_MATCH,0.0
+autarc,,NO_MATCH,0.0
+Assembly HOA,,NO_MATCH,0.0
+Orca Client,,NO_MATCH,0.0
+Draft The Record,,NO_MATCH,0.0
+Typa,,NO_MATCH,0.0
+Quetzal,,NO_MATCH,0.0
+Rastro,,NO_MATCH,0.0
+Serve AI,,NO_MATCH,0.0
+Elayne,,NO_MATCH,0.0
+Usul,,NO_MATCH,0.0
+Keet,,NO_MATCH,0.0
+Vera Health,,NO_MATCH,0.0
+Pipeshift,,NO_MATCH,0.0
+Ficra,,NO_MATCH,0.0
+Anglera,,NO_MATCH,0.0
+Void,,NO_MATCH,0.0
+Overlap,,NO_MATCH,0.0
+Affil.ai,,NO_MATCH,0.0
+Arva AI,,NO_MATCH,0.0
+Freestyle,,NO_MATCH,0.0
+Syntra,,NO_MATCH,0.0
+Conductor,,NO_MATCH,0.0
+DreamRP,,NO_MATCH,0.0
+Onlook,,NO_MATCH,0.0
+Zeroframe,,NO_MATCH,0.0
+Riveter,,NO_MATCH,0.0
+Galini,,NO_MATCH,0.0
+Candle,,NO_MATCH,0.0
+Openbenchmarks,,NO_MATCH,0.0
+Raycaster,,NO_MATCH,0.0
+Revyl,,NO_MATCH,0.0
+Vortexify,,NO_MATCH,0.0
+Vespper,,NO_MATCH,0.0
+attimet,,NO_MATCH,0.0
+Keye,,NO_MATCH,0.0
+Freebuff,,NO_MATCH,0.0
+Pearson Labs,,NO_MATCH,0.0
+vly.ai,,NO_MATCH,0.0
+AutoComputer,,NO_MATCH,0.0
+Abundant,,NO_MATCH,0.0
+Moonshine,,NO_MATCH,0.0
+Consus,,NO_MATCH,0.0
+Innate,,NO_MATCH,0.0
+Gander,,NO_MATCH,0.0
+Diffusion Studio,,NO_MATCH,0.0
+Struct,,NO_MATCH,0.0
+Melder,,NO_MATCH,0.0
+HumanLayer,,NO_MATCH,0.0
+Quantstruct,,NO_MATCH,0.0
+Edexia,,NO_MATCH,0.0
+Outship,,NO_MATCH,0.0
+Candor,,NO_MATCH,0.0
+Vetnio,,NO_MATCH,0.0
+Leaping AI,,NO_MATCH,0.0
+Tweeks.io,,NO_MATCH,0.0
+Praxim,,NO_MATCH,0.0
+Alice.tech,,NO_MATCH,0.0
+Dartboard,,NO_MATCH,0.0
+Vocality Health,,NO_MATCH,0.0
+Scout,,NO_MATCH,0.0
+Promptless,,NO_MATCH,0.0
+Truffle AI,,NO_MATCH,0.0
+Toothy AI,,NO_MATCH,0.0
+a0.dev,,NO_MATCH,0.0
+Elip AI,,NO_MATCH,0.0
+Caseflood.ai,,NO_MATCH,0.0
+Maive,,NO_MATCH,0.0
+Adam,,NO_MATCH,0.0
+Swerve,,NO_MATCH,0.0
+Osmosis,,NO_MATCH,0.0
+Mecha Health,,NO_MATCH,0.0
+Cuckoo Labs,,NO_MATCH,0.0
+HUD,,NO_MATCH,0.0
+Gale,,NO_MATCH,0.0
+Asteroid,,NO_MATCH,0.0
+Pickle,,NO_MATCH,0.0
+Harbera,,NO_MATCH,0.0
+Lopus,,NO_MATCH,0.0
+Mundo AI,,NO_MATCH,0.0
+Lucidic AI,,NO_MATCH,0.0
+Trata,,NO_MATCH,0.0
+Exla,,NO_MATCH,0.0
+Outlit,,NO_MATCH,0.0
+Sennu AI,,NO_MATCH,0.0
+Artificial Societies,,NO_MATCH,0.0
+AfterQuery,,NO_MATCH,0.0
+Mastra,,NO_MATCH,0.0
+Proception Inc,,NO_MATCH,0.0
+Woz,,NO_MATCH,0.0
+Spott,,NO_MATCH,0.0
+CopyCat,,NO_MATCH,0.0
+TamLabs,,NO_MATCH,0.0
+Codevisor,,NO_MATCH,0.0
+Dex,,NO_MATCH,0.0
+Mentra,,NO_MATCH,0.0
+Blaxel,,NO_MATCH,0.0
+Golf,,NO_MATCH,0.0
+Serafis,,NO_MATCH,0.0
+Synthio Labs,,NO_MATCH,0.0
+neoncoral,,NO_MATCH,0.0
+Acolite,,NO_MATCH,0.0
+Feyn,,NO_MATCH,0.0
+Zeon Systems,,NO_MATCH,0.0
+Clarm,,NO_MATCH,0.0
+Hanji,,NO_MATCH,0.0
+Percival,,NO_MATCH,0.0
+Kestral,,NO_MATCH,0.0
+Parsewise,,NO_MATCH,0.0
+Tinfoil,,NO_MATCH,0.0
+Tegore,,NO_MATCH,0.0
+throxy,,NO_MATCH,0.0
+Anana,,NO_MATCH,0.0
+IRBC,,NO_MATCH,0.0
+Theta,,NO_MATCH,0.0
+QualGent,,NO_MATCH,0.0
+Human Behavior,,NO_MATCH,0.0
+Cartpole,,NO_MATCH,0.0
+Boost Robotics,,NO_MATCH,0.0
+Cactus Compute,,NO_MATCH,0.0
+Bramante,,NO_MATCH,0.0
+Kairos,,NO_MATCH,0.0
+Mesmer,,NO_MATCH,0.0
+Adentris,,NO_MATCH,0.0
+Moby Analytics,,NO_MATCH,0.0
+Pelica,,NO_MATCH,0.0
+Code Four,,NO_MATCH,0.0
+Cactus,,NO_MATCH,0.0
+Wavedash,,NO_MATCH,0.0
+StarSling,,NO_MATCH,0.0
+Text.ai,,NO_MATCH,0.0
+Blueshoe,,NO_MATCH,0.0
+Godela,,NO_MATCH,0.0
+Docket,,NO_MATCH,0.0
+Autonomous Technologies Group,,NO_MATCH,0.0
+Adaptional,,NO_MATCH,0.0
+Meteor,,NO_MATCH,0.0
+Closera,,NO_MATCH,0.0
+Dedalus Labs,,NO_MATCH,0.0
+truthsystems,,NO_MATCH,0.0
+Lanesurf,,NO_MATCH,0.0
+Datafruit,,NO_MATCH,0.0
+Lark,,NO_MATCH,0.0
+EffiGov,,NO_MATCH,0.0
+Design Arena,,NO_MATCH,0.0
+Lotas,,NO_MATCH,0.0
+Monarcha,,NO_MATCH,0.0
+Nuntius,,NO_MATCH,0.0
+Cyberdesk,,NO_MATCH,0.0
+Frizzle,,NO_MATCH,0.0
+Nori,,NO_MATCH,0.0
+Proliferate,,NO_MATCH,0.0
+Magnitude,,NO_MATCH,0.0
+DeepAware AI (Robotics Center of Silicon Valley),,NO_MATCH,0.0
+Stellon Labs,,NO_MATCH,0.0
+Doe,,NO_MATCH,0.0
+OneStop,,NO_MATCH,0.0
+Embedder,,NO_MATCH,0.0
+Channel3,,NO_MATCH,0.0
+Normal,,NO_MATCH,0.0
+VibeFlow,,NO_MATCH,0.0
+Nozomio,,NO_MATCH,0.0
+Mimos,,NO_MATCH,0.0
+TwentyTwo,,NO_MATCH,0.0
+Char,,NO_MATCH,0.0
+Relling,,NO_MATCH,0.0
+Motives,,NO_MATCH,0.0
+Finto,,NO_MATCH,0.0
+Autosana,,NO_MATCH,0.0
+Knowlify,,NO_MATCH,0.0
+Omnara,,NO_MATCH,0.0
+Alara,,NO_MATCH,0.0
+OS3,,NO_MATCH,0.0
+Floot,,NO_MATCH,0.0
+Maximal,,NO_MATCH,0.0
+PARES AI,,NO_MATCH,0.0
+Altur,,NO_MATCH,0.0
+Pleom,,NO_MATCH,0.0
+Pally,,NO_MATCH,0.0
+Certus AI,,NO_MATCH,0.0
+Reacher,,NO_MATCH,0.0
+KERNEL,,NO_MATCH,0.0
+CLODO,,NO_MATCH,0.0
+Fleetline,,NO_MATCH,0.0
+Modelence,,NO_MATCH,0.0
+TectoAI,,NO_MATCH,0.0
+RowFlow,,NO_MATCH,0.0
+NOSO LABS,,NO_MATCH,0.0
+Luminal,,NO_MATCH,0.0
+Paloma,,NO_MATCH,0.0
+Mixy,,NO_MATCH,0.0
+Lapis,,NO_MATCH,0.0
+Structured AI,,NO_MATCH,0.0
+Zavo,,NO_MATCH,0.0
+Nexus,,NO_MATCH,0.0
+Bolna AI,,NO_MATCH,0.0
+Scoop,,NO_MATCH,0.0
+Caddy,,NO_MATCH,0.0
+Tell if AI,,NO_MATCH,0.0
+Flick,,NO_MATCH,0.0
+SellRaze,,NO_MATCH,0.0
+Unsiloed AI,,NO_MATCH,0.0
+LogosGuard,,NO_MATCH,0.0
+Agentic Fabriq,,NO_MATCH,0.0
+Aleph Lab,,NO_MATCH,0.0
+Helonic,,NO_MATCH,0.0
+FinalDose,,NO_MATCH,0.0
+Rovr,,NO_MATCH,0.0
+Compyle,,NO_MATCH,0.0
+Frontier Computing,,NO_MATCH,0.0
+Radius,,NO_MATCH,0.0
+Cortex AI,,NO_MATCH,0.0
+Patent Watch,,NO_MATCH,0.0
+Anto Biosciences,,NO_MATCH,0.0
+Imagine AI,,NO_MATCH,0.0
+Aside,,NO_MATCH,0.0
+Sourcebot,,NO_MATCH,0.0
+Philon,,NO_MATCH,0.0
+Relaw,,NO_MATCH,0.0
+Perseus,,NO_MATCH,0.0
+Lemma,,NO_MATCH,0.0
+MadeThis,,NO_MATCH,0.0
+Boom AI,,NO_MATCH,0.0
+Layers,,NO_MATCH,0.0
+DiligenceSquared,,NO_MATCH,0.0
+Axial,,NO_MATCH,0.0
+Clicks Health,,NO_MATCH,0.0
+Openroll,,NO_MATCH,0.0
+Rivet,,NO_MATCH,0.0
+Ndea,,NO_MATCH,0.0
+Haladir,,NO_MATCH,0.0
+Linzumi,,NO_MATCH,0.0
+OneTriangle,,NO_MATCH,0.0
+Imperfect,,NO_MATCH,0.0
+Piris Labs,,NO_MATCH,0.0
+Ashr,,NO_MATCH,0.0
+RamAIn,,NO_MATCH,0.0
+Salus,,NO_MATCH,0.0
+Rapidfolio,,NO_MATCH,0.0
+IncidentFox,,NO_MATCH,0.0
+Instinct,,NO_MATCH,0.0
+Visibl Semiconductors,,NO_MATCH,0.0
+Assemble,,NO_MATCH,0.0
+Fenrock AI,,NO_MATCH,0.0
+Revion,,NO_MATCH,0.0
+Sitefire,,NO_MATCH,0.0
+Archal,,NO_MATCH,0.0
+Voxel Energy,,NO_MATCH,0.0
+Superset,,NO_MATCH,0.0
+Datoric,,NO_MATCH,0.0
+Servo7,,NO_MATCH,0.0
+Foreman,,NO_MATCH,0.0
+Turnstone,,NO_MATCH,0.0
+Atlia,,NO_MATCH,0.0
+Talking Computers,,NO_MATCH,0.0
+Veriad,,NO_MATCH,0.0
+Poth Labs,,NO_MATCH,0.0
+Carrot Labs,,NO_MATCH,0.0
+Shofo,,NO_MATCH,0.0
+"PerfectBit, Inc.",,NO_MATCH,0.0
+Illume Labs,,NO_MATCH,0.0
+Multiplier,,NO_MATCH,0.0
+Palette,,NO_MATCH,0.0
+Twolabs,,NO_MATCH,0.0
+Zenbu,,NO_MATCH,0.0
+Light Anchor,,NO_MATCH,0.0
+GodHands,,NO_MATCH,0.0
+Superlog,,NO_MATCH,0.0
+Userlens,,NO_MATCH,0.0
+Kimpton,,NO_MATCH,0.0
+Keyframe Labs,,NO_MATCH,0.0
+Degla Inc,,NO_MATCH,0.0
+Collar,,NO_MATCH,0.0
+Armature,,NO_MATCH,0.0
+Pops,,NO_MATCH,0.0
+Uno Wallet,,NO_MATCH,0.0
+Trident,,NO_MATCH,0.0
+Enjamb Labs,,NO_MATCH,0.0
+rekursiv.ai,,NO_MATCH,0.0
+Amorphic Labs,,NO_MATCH,0.0
+Pango,,NO_MATCH,0.0
+Erinys,,NO_MATCH,0.0
+Perceptron ML,,NO_MATCH,0.0
+Olam Labs,,NO_MATCH,0.0
+Trope,,NO_MATCH,0.0
+Palisade,,NO_MATCH,0.0
+Zomma,,NO_MATCH,0.0
+Rex,,NO_MATCH,0.0
+Maingen,,NO_MATCH,0.0
+Studio,,NO_MATCH,0.0
+Orchestra,,NO_MATCH,0.0
+Speko,,NO_MATCH,0.0
+Jcode,,NO_MATCH,0.0
+IMPACT Drones,,NO_MATCH,0.0
+GUILD,,NO_MATCH,0.0
+Bizmark,,NO_MATCH,0.0
+Mosaic,,NO_MATCH,0.0
+Alloovium,,NO_MATCH,0.0
+Mochi,,NO_MATCH,0.0
+DeepReach Inc.,,NO_MATCH,0.0
+Grocalo,,NO_MATCH,0.0
+Audun,,NO_MATCH,0.0
+Touchmark,,NO_MATCH,0.0
+Zaplar,,NO_MATCH,0.0
+screenpipe,,NO_MATCH,0.0
+Rasyn,,NO_MATCH,0.0
+Alkera AI,,NO_MATCH,0.0
+Definite,,NO_MATCH,0.0
+Traceforce,,NO_MATCH,0.0
+Bloomy,,NO_MATCH,0.0
+Ooak Data,,NO_MATCH,0.0
+Whitespace,,NO_MATCH,0.0
+Click,,NO_MATCH,0.0
+Vendo,,NO_MATCH,0.0
+Rational,,NO_MATCH,0.0
+Omanta,,NO_MATCH,0.0
+Fabraix,,NO_MATCH,0.0
+Qlo,,NO_MATCH,0.0
+Tenor,,NO_MATCH,0.0
+Risklytics,,NO_MATCH,0.0
+Neuromorphic,,NO_MATCH,0.0
+Arbital,,NO_MATCH,0.0
+Moving Atoms,,NO_MATCH,0.0
+Ekho Labs,,NO_MATCH,0.0
+Isengard Industries Inc,,NO_MATCH,0.0
+Denta,,NO_MATCH,0.0
+Computable,,NO_MATCH,0.0
+Financial Datasets,,NO_MATCH,0.0
+Last Accounting Company,,NO_MATCH,0.0
+Executor,,NO_MATCH,0.0
+Waybill,,NO_MATCH,0.0
+Lumeria,,NO_MATCH,0.0
+Agnost AI,,NO_MATCH,0.0
+Decawork,,NO_MATCH,0.0
+Lamb Labs,,NO_MATCH,0.0
+Skymerse,,NO_MATCH,0.0
+HyperProbe,,NO_MATCH,0.0
+TovenAI,,NO_MATCH,0.0
+Agent FM,,NO_MATCH,0.0
+PRINCEPS,,NO_MATCH,0.0
+Florin,,NO_MATCH,0.0
+Dawn Industries,,NO_MATCH,0.0
+hiloop,,NO_MATCH,0.0
+Robocurve,,NO_MATCH,0.0
+Allia Health,,NO_MATCH,0.0
+Osseus,,NO_MATCH,0.0
+Billow AI Labs,,NO_MATCH,0.0
+CoArena,,NO_MATCH,0.0
+Experiential Labs,,NO_MATCH,0.0
+Conifer,,NO_MATCH,0.0
+herdr,,NO_MATCH,0.0
+Sentient OS,,NO_MATCH,0.0
+Simulithic,,NO_MATCH,0.0
+Veeza AI,,NO_MATCH,0.0
+Qokedas,,NO_MATCH,0.0
+Forward,,NO_MATCH,0.0
+Lantern AI,,NO_MATCH,0.0
+Nodus Compute,,NO_MATCH,0.0
+ORO AI,,NO_MATCH,0.0
+Dreamscale Labs,,NO_MATCH,0.0
+Frontrunner,,NO_MATCH,0.0
+The Agentic Data Co.,,NO_MATCH,0.0
+Redoubt Insurance,,NO_MATCH,0.0
+LeadGenius,,NO_MATCH,0.0
+Olark,,NO_MATCH,0.0
+Plivo,,NO_MATCH,0.0
+ChatGPT,OpenAI,ALIAS,100.0
+Google Gemini,,NO_MATCH,0.0
+Claude,Anthropic,ALIAS,100.0
+Perplexity,Perplexity,EXACT,100.0
+Microsoft Copilot,,NO_MATCH,0.0
+Grok,xAI,ALIAS,100.0
+Poe,,NO_MATCH,0.0
+Pi,,NO_MATCH,0.0
+HuggingChat,,NO_MATCH,0.0
+Mistral AI,Mistral AI,EXACT,100.0
+DeepSeek,,NO_MATCH,0.0
+Meta AI,,NO_MATCH,0.0
+You.com,,NO_MATCH,0.0
+Phind,,NO_MATCH,0.0
+Komo,,NO_MATCH,0.0
+Aria by Opera,,NO_MATCH,0.0
+Brave Leo,,NO_MATCH,0.0
+Samsung Bixby,,NO_MATCH,0.0
+Amazon Alexa,,NO_MATCH,0.0
+Google Assistant,,NO_MATCH,0.0
+Apple Siri,,NO_MATCH,0.0
+Character.AI,Character AI,EXACT,100.0
+Replika,,NO_MATCH,0.0
+Jasper,Jasper,EXACT,100.0
+Copy.ai,Copy.ai,EXACT,100.0
+Rytr,,NO_MATCH,0.0
+Anyword,,NO_MATCH,0.0
+Grammarly,,NO_MATCH,0.0
+Wordtune,,NO_MATCH,0.0
+QuillBot,,NO_MATCH,0.0
+Hemingway Editor,,NO_MATCH,0.0
+ProWritingAid,,NO_MATCH,0.0
+Sudowrite,,NO_MATCH,0.0
+Notion AI,,NO_MATCH,0.0
+Writer,Writer,EXACT,100.0
+Simplified,,NO_MATCH,0.0
+Frase,,NO_MATCH,0.0
+Clearscope,,NO_MATCH,0.0
+Surfer SEO,,NO_MATCH,0.0
+MarketMuse,,NO_MATCH,0.0
+Scalenut,,NO_MATCH,0.0
+ContentBot,,NO_MATCH,0.0
+Pepper (Pepper Content),,NO_MATCH,0.0
+TextCortex,,NO_MATCH,0.0
+Hypotenuse AI,,NO_MATCH,0.0
+Lex,,NO_MATCH,0.0
+Type.ai,,NO_MATCH,0.0
+Moonbeam,,NO_MATCH,0.0
+Craftly.AI,,NO_MATCH,0.0
+Paragraph AI,,NO_MATCH,0.0
+Cohesive,,NO_MATCH,0.0
+StoryLab.ai,,NO_MATCH,0.0
+Coda AI,,NO_MATCH,0.0
+Compose AI,,NO_MATCH,0.0
+Juno,,NO_MATCH,0.0
+Undetectable AI,,NO_MATCH,0.0
+Originality.AI,,NO_MATCH,0.0
+GPTZero,,NO_MATCH,0.0
+Copyleaks,,NO_MATCH,0.0
+Sapling,,NO_MATCH,0.0
+GitHub Copilot,,NO_MATCH,0.0
+Cursor,Cursor,EXACT,100.0
+Windsurf (Codeium),,NO_MATCH,0.0
+Tabnine,,NO_MATCH,0.0
+Replit,,NO_MATCH,0.0
+Amazon CodeWhisperer,,NO_MATCH,0.0
+Sourcegraph Cody,,NO_MATCH,0.0
+AskCodi,,NO_MATCH,0.0
+Qodo,,NO_MATCH,0.0
+Snyk,,NO_MATCH,0.0
+Devin,,NO_MATCH,0.0
+Sweep AI,,NO_MATCH,0.0
+Blackbox AI,,NO_MATCH,0.0
+CodeRabbit,,NO_MATCH,0.0
+Pieces,,NO_MATCH,0.0
+Bito,,NO_MATCH,0.0
+Aider,,NO_MATCH,0.0
+Bolt,,NO_MATCH,0.0
+Lovable,,NO_MATCH,0.0
+v0 by Vercel,,NO_MATCH,0.0
+Warp,,NO_MATCH,0.0
+Fig (Amazon Q),,NO_MATCH,0.0
+Supermaven,,NO_MATCH,0.0
+OpenAI Codex,,NO_MATCH,0.0
+Gemini Code Assist,,NO_MATCH,0.0
+JetBrains AI Assistant,,NO_MATCH,0.0
+Visual Copilot,,NO_MATCH,0.0
+Mintlify,,NO_MATCH,0.0
+Docstring AI,,NO_MATCH,0.0
+Codiga,,NO_MATCH,0.0
+Kombai,,NO_MATCH,0.0
+Vercel AI SDK,,NO_MATCH,0.0
+LangChain,LangChain,EXACT,100.0
+LlamaIndex,,NO_MATCH,0.0
+Hugging Face,Hugging Face,EXACT,100.0
+Weights & Biases,Weights & Biases,EXACT,100.0
+MLflow,,NO_MATCH,0.0
+Gradio,,NO_MATCH,0.0
+Streamlit,,NO_MATCH,0.0
+Modal,,NO_MATCH,0.0
+Replicate,Replicate,EXACT,100.0
+Together AI,Together AI,EXACT,100.0
+Anyscale,,NO_MATCH,0.0
+Databricks,Databricks,EXACT,100.0
+Paperspace,,NO_MATCH,0.0
+Lightning AI,,NO_MATCH,0.0
+Roboflow,,NO_MATCH,0.0
+SuperAnnotate,,NO_MATCH,0.0
+Canva,,NO_MATCH,0.0
+Figma AI,,NO_MATCH,0.0
+Adobe Firefly,,NO_MATCH,0.0
+Framer,,NO_MATCH,0.0
+Galileo AI,,NO_MATCH,0.0
+Uizard,,NO_MATCH,0.0
+Khroma,,NO_MATCH,0.0
+Looka,,NO_MATCH,0.0
+Designs.ai,,NO_MATCH,0.0
+Brandmark,,NO_MATCH,0.0
+Hatchful by Shopify,,NO_MATCH,0.0
+Playground AI,,NO_MATCH,0.0
+Piktochart,,NO_MATCH,0.0
+Visme,,NO_MATCH,0.0
+RelayThat,,NO_MATCH,0.0
+Autodraw,,NO_MATCH,0.0
+Uxpilot,,NO_MATCH,0.0
+Creately,,NO_MATCH,0.0
+Miro AI,,NO_MATCH,0.0
+Pitch,,NO_MATCH,0.0
+Beautiful.ai,,NO_MATCH,0.0
+Gamma,,NO_MATCH,0.0
+SlidesAI,,NO_MATCH,0.0
+Decktopus,,NO_MATCH,0.0
+Prezi AI,,NO_MATCH,0.0
+Slidebean,,NO_MATCH,0.0
+Plus AI,,NO_MATCH,0.0
+Midjourney,Midjourney,EXACT,100.0
+DALL-E 3,,NO_MATCH,0.0
+Stable Diffusion,Stability AI,ALIAS,100.0
+Leonardo AI,,NO_MATCH,0.0
+Ideogram,,NO_MATCH,0.0
+Wombo Dream,,NO_MATCH,0.0
+Flux by Black Forest Labs,,NO_MATCH,0.0
+Bing Image Creator,,NO_MATCH,0.0
+DreamStudio,,NO_MATCH,0.0
+NightCafe,,NO_MATCH,0.0
+Artbreeder,,NO_MATCH,0.0
+StarryAI,,NO_MATCH,0.0
+Deep Dream Generator,,NO_MATCH,0.0
+Pixlr,,NO_MATCH,0.0
+Fotor,,NO_MATCH,0.0
+Remove.bg,,NO_MATCH,0.0
+Cleanup.pictures,,NO_MATCH,0.0
+Let's Enhance,,NO_MATCH,0.0
+Upscayl,,NO_MATCH,0.0
+Topaz Labs,,NO_MATCH,0.0
+Luminar Neo,,NO_MATCH,0.0
+PhotoRoom,,NO_MATCH,0.0
+Picsart,,NO_MATCH,0.0
+Cutout.Pro,,NO_MATCH,0.0
+DeepAI,,NO_MATCH,0.0
+Craiyon,,NO_MATCH,0.0
+BlueWillow,,NO_MATCH,0.0
+Krea AI,,NO_MATCH,0.0
+Civitai,,NO_MATCH,0.0
+Lexica,,NO_MATCH,0.0
+Clipdrop,,NO_MATCH,0.0
+PhotoAI,,NO_MATCH,0.0
+Aragon AI,,NO_MATCH,0.0
+HeadshotPro,,NO_MATCH,0.0
+Profile Picture AI,,NO_MATCH,0.0
+Lensa AI,,NO_MATCH,0.0
+FaceApp,,NO_MATCH,0.0
+Remini,,NO_MATCH,0.0
+Colorize,,NO_MATCH,0.0
+Vectorizer.AI,,NO_MATCH,0.0
+Trace by Stickermule,,NO_MATCH,0.0
+Img2Go,,NO_MATCH,0.0
+Hotpot.ai,,NO_MATCH,0.0
+Imgcreator,,NO_MATCH,0.0
+Gencraft,,NO_MATCH,0.0
+Neural.love,,NO_MATCH,0.0
+Dreamlike.art,,NO_MATCH,0.0
+Scenario,,NO_MATCH,0.0
+InstantID,,NO_MATCH,0.0
+Tensor.Art,,NO_MATCH,0.0
+SeaArt AI,,NO_MATCH,0.0
+Magnific AI,,NO_MATCH,0.0
+Dzine,,NO_MATCH,0.0
+Recraft,,NO_MATCH,0.0
+Runway,Runway,EXACT,100.0
+Synthesia,Synthesia,EXACT,100.0
+HeyGen,,NO_MATCH,0.0
+Sora,OpenAI,ALIAS,100.0
+Kling AI,,NO_MATCH,0.0
+Luma AI,,NO_MATCH,0.0
+Pika,,NO_MATCH,0.0
+Descript,,NO_MATCH,0.0
+Pictory,,NO_MATCH,0.0
+InVideo AI,,NO_MATCH,0.0
+Opus Clip,,NO_MATCH,0.0
+Kapwing,,NO_MATCH,0.0
+Veed.io,,NO_MATCH,0.0
+FlexClip,,NO_MATCH,0.0
+Steve AI,,NO_MATCH,0.0
+Elai.io,,NO_MATCH,0.0
+Colossyan,,NO_MATCH,0.0
+DeepBrain AI,,NO_MATCH,0.0
+Vidnoz AI,,NO_MATCH,0.0
+Fliki,,NO_MATCH,0.0
+Lumen5,,NO_MATCH,0.0
+Animoto,,NO_MATCH,0.0
+Filmora AI,,NO_MATCH,0.0
+CapCut,,NO_MATCH,0.0
+Captions AI,,NO_MATCH,0.0
+Vizard.ai,,NO_MATCH,0.0
+Riverside,,NO_MATCH,0.0
+Grain,,NO_MATCH,0.0
+Fireflies.ai,,NO_MATCH,0.0
+tl;dv,,NO_MATCH,0.0
+Otter.ai,,NO_MATCH,0.0
+Fathom,,NO_MATCH,0.0
+Krisp,,NO_MATCH,0.0
+Notta,,NO_MATCH,0.0
+Clideo,,NO_MATCH,0.0
+Clipchamp,,NO_MATCH,0.0
+Topaz Video AI,,NO_MATCH,0.0
+Wisecut,,NO_MATCH,0.0
+Quso.ai,,NO_MATCH,0.0
+Munch,,NO_MATCH,0.0
+Submagic,,NO_MATCH,0.0
+AutoPod,,NO_MATCH,0.0
+Papercup,,NO_MATCH,0.0
+Dubverse,,NO_MATCH,0.0
+Rask AI,,NO_MATCH,0.0
+Deepdub,,NO_MATCH,0.0
+Haiper AI,,NO_MATCH,0.0
+Genmo,,NO_MATCH,0.0
+Kaiber,,NO_MATCH,0.0
+Hedra,,NO_MATCH,0.0
+Viggle AI,,NO_MATCH,0.0
+Minimax (Hailuo),,NO_MATCH,0.0
+Veo by Google,,NO_MATCH,0.0
+Luma Dream Machine,,NO_MATCH,0.0
+Stability Video,,NO_MATCH,0.0
+Wondershare Virbo,,NO_MATCH,0.0
+ElevenLabs,ElevenLabs,EXACT,100.0
+Murf AI,,NO_MATCH,0.0
+Speechify,,NO_MATCH,0.0
+WellSaid Labs,,NO_MATCH,0.0
+Resemble AI,,NO_MATCH,0.0
+Coqui,,NO_MATCH,0.0
+Bark,,NO_MATCH,0.0
+Tortoise TTS,,NO_MATCH,0.0
+LOVO AI,,NO_MATCH,0.0
+Listnr,,NO_MATCH,0.0
+Narakeet,,NO_MATCH,0.0
+Async,,NO_MATCH,0.0
+Adobe Podcast,,NO_MATCH,0.0
+Cleanvoice,,NO_MATCH,0.0
+Suno AI,,NO_MATCH,0.0
+Udio,,NO_MATCH,0.0
+AIVA,,NO_MATCH,0.0
+Soundraw,,NO_MATCH,0.0
+Boomy,,NO_MATCH,0.0
+Amper Music,,NO_MATCH,0.0
+Beatoven.ai,,NO_MATCH,0.0
+Loudly,,NO_MATCH,0.0
+Soundful,,NO_MATCH,0.0
+Epidemic Sound,,NO_MATCH,0.0
+Artlist,,NO_MATCH,0.0
+Splice,,NO_MATCH,0.0
+BandLab,,NO_MATCH,0.0
+Lalal.ai,,NO_MATCH,0.0
+Moises AI,,NO_MATCH,0.0
+AudioStrip,,NO_MATCH,0.0
+Soundtrap,,NO_MATCH,0.0
+Voicemod,,NO_MATCH,0.0
+Altered,,NO_MATCH,0.0
+Voice.ai,,NO_MATCH,0.0
+Whisper,,NO_MATCH,0.0
+Deepgram,,NO_MATCH,0.0
+Rev AI,,NO_MATCH,0.0
+Sonix,,NO_MATCH,0.0
+Happy Scribe,,NO_MATCH,0.0
+Trint,,NO_MATCH,0.0
+Auphonic,,NO_MATCH,0.0
+iZotope RX,,NO_MATCH,0.0
+Landr,,NO_MATCH,0.0
+Endel,,NO_MATCH,0.0
+Brain.fm,,NO_MATCH,0.0
+Splash,,NO_MATCH,0.0
+Stability Audio,,NO_MATCH,0.0
+HubSpot AI,,NO_MATCH,0.0
+Writerly,,NO_MATCH,0.0
+Semrush,,NO_MATCH,0.0
+Ahrefs,,NO_MATCH,0.0
+Moz,,NO_MATCH,0.0
+SE Ranking,,NO_MATCH,0.0
+Page Optimizer Pro,,NO_MATCH,0.0
+Dashword,,NO_MATCH,0.0
+Mailchimp,,NO_MATCH,0.0
+Brevo,,NO_MATCH,0.0
+ActiveCampaign,,NO_MATCH,0.0
+Klaviyo,,NO_MATCH,0.0
+ConvertKit,,NO_MATCH,0.0
+Seventh Sense,,NO_MATCH,0.0
+Jacquard,,NO_MATCH,0.0
+Persado,,NO_MATCH,0.0
+Albert AI,,NO_MATCH,0.0
+Adzooma,,NO_MATCH,0.0
+AdCreative.ai,,NO_MATCH,0.0
+Smartly.io,,NO_MATCH,0.0
+Optimizely,,NO_MATCH,0.0
+VWO,,NO_MATCH,0.0
+Unbounce,,NO_MATCH,0.0
+Instapage,,NO_MATCH,0.0
+Qualified,,NO_MATCH,0.0
+Intercom,,NO_MATCH,0.0
+ManyChat,,NO_MATCH,0.0
+Chatfuel,,NO_MATCH,0.0
+Marketo Engage,,NO_MATCH,0.0
+Pardot,,NO_MATCH,0.0
+Iterable,,NO_MATCH,0.0
+Customer.io,,NO_MATCH,0.0
+Braze,,NO_MATCH,0.0
+CleverTap,,NO_MATCH,0.0
+Insider One,,NO_MATCH,0.0
+MoEngage,,NO_MATCH,0.0
+WebEngage,,NO_MATCH,0.0
+Omnisend,,NO_MATCH,0.0
+Drip,,NO_MATCH,0.0
+PathFactory,,NO_MATCH,0.0
+Uberflip,,NO_MATCH,0.0
+Crayon,,NO_MATCH,0.0
+Klue,,NO_MATCH,0.0
+Similarweb,,NO_MATCH,0.0
+SparkToro,,NO_MATCH,0.0
+BuzzSumo,,NO_MATCH,0.0
+Brand24,,NO_MATCH,0.0
+Mention,,NO_MATCH,0.0
+Meltwater,,NO_MATCH,0.0
+Cision,,NO_MATCH,0.0
+Prowly,,NO_MATCH,0.0
+NeuronWriter,,NO_MATCH,0.0
+RankMath,,NO_MATCH,0.0
+Yoast SEO,,NO_MATCH,0.0
+Screaming Frog,,NO_MATCH,0.0
+Mangools,,NO_MATCH,0.0
+Serpstat,,NO_MATCH,0.0
+WriterZen,,NO_MATCH,0.0
+Topic,,NO_MATCH,0.0
+Salesforce Einstein,,NO_MATCH,0.0
+HubSpot Sales Hub,,NO_MATCH,0.0
+Gong,,NO_MATCH,0.0
+Wingman (Clari),,NO_MATCH,0.0
+Outreach,,NO_MATCH,0.0
+SalesLoft,,NO_MATCH,0.0
+Apollo.io,,NO_MATCH,0.0
+ZoomInfo,,NO_MATCH,0.0
+Lusha,,NO_MATCH,0.0
+Clearbit,,NO_MATCH,0.0
+6sense,,NO_MATCH,0.0
+Clari,,NO_MATCH,0.0
+Backstory,,NO_MATCH,0.0
+Seamless.AI,,NO_MATCH,0.0
+LeadIQ,,NO_MATCH,0.0
+Cognism,,NO_MATCH,0.0
+Clay,,NO_MATCH,0.0
+Lavender,,NO_MATCH,0.0
+Regie.ai,,NO_MATCH,0.0
+Vidyard,,NO_MATCH,0.0
+Loom,,NO_MATCH,0.0
+Calendly,,NO_MATCH,0.0
+Chili Piper,,NO_MATCH,0.0
+DocuSign,,NO_MATCH,0.0
+PandaDoc,,NO_MATCH,0.0
+Proposify,,NO_MATCH,0.0
+Freshsales,,NO_MATCH,0.0
+Pipedrive,,NO_MATCH,0.0
+Close,,NO_MATCH,0.0
+Nutshell,,NO_MATCH,0.0
+Notion,,NO_MATCH,0.0
+Obsidian,,NO_MATCH,0.0
+Roam Research,,NO_MATCH,0.0
+Mem,,NO_MATCH,0.0
+Reflect,,NO_MATCH,0.0
+Tana,,NO_MATCH,0.0
+Logseq,,NO_MATCH,0.0
+Capacities,,NO_MATCH,0.0
+Craft,,NO_MATCH,0.0
+Slite,,NO_MATCH,0.0
+Tettra,,NO_MATCH,0.0
+Guru,,NO_MATCH,0.0
+Confluence AI,,NO_MATCH,0.0
+Todoist,,NO_MATCH,0.0
+TickTick,,NO_MATCH,0.0
+Things 3,,NO_MATCH,0.0
+Any.do,,NO_MATCH,0.0
+Reclaim.ai,,NO_MATCH,0.0
+Clockwise,,NO_MATCH,0.0
+SkedPal,,NO_MATCH,0.0
+Fantastical,,NO_MATCH,0.0
+Cal.com,,NO_MATCH,0.0
+Zapier,,NO_MATCH,0.0
+Make,,NO_MATCH,0.0
+n8n,,NO_MATCH,0.0
+Bardeen,,NO_MATCH,0.0
+Tray.io,,NO_MATCH,0.0
+Workato,,NO_MATCH,0.0
+Power Automate,,NO_MATCH,0.0
+IFTTT,,NO_MATCH,0.0
+Parabola,,NO_MATCH,0.0
+Airtable,,NO_MATCH,0.0
+Monday.com,,NO_MATCH,0.0
+Asana,,NO_MATCH,0.0
+ClickUp,,NO_MATCH,0.0
+Linear,,NO_MATCH,0.0
+Jira AI,,NO_MATCH,0.0
+Basecamp,,NO_MATCH,0.0
+Wrike,,NO_MATCH,0.0
+Smartsheet,,NO_MATCH,0.0
+Hive,,NO_MATCH,0.0
+Teamwork,,NO_MATCH,0.0
+Shortcut,,NO_MATCH,0.0
+Superhuman,,NO_MATCH,0.0
+Shortwave,,NO_MATCH,0.0
+SaneBox,,NO_MATCH,0.0
+Spark Email,,NO_MATCH,0.0
+Missive,,NO_MATCH,0.0
+Front,,NO_MATCH,0.0
+Tango,,NO_MATCH,0.0
+ScreenPal,,NO_MATCH,0.0
+Tally,,NO_MATCH,0.0
+Typeform,,NO_MATCH,0.0
+Jotform,,NO_MATCH,0.0
+TextExpander,,NO_MATCH,0.0
+Raycast,,NO_MATCH,0.0
+Alfred,,NO_MATCH,0.0
+Espanso,,NO_MATCH,0.0
+Magical,,NO_MATCH,0.0
+Taskade,,NO_MATCH,0.0
+Fibery,,NO_MATCH,0.0
+Cron Calendar,,NO_MATCH,0.0
+Elicit,,NO_MATCH,0.0
+Consensus,,NO_MATCH,0.0
+Semantic Scholar,,NO_MATCH,0.0
+Connected Papers,,NO_MATCH,0.0
+Research Rabbit,,NO_MATCH,0.0
+Scholarcy,,NO_MATCH,0.0
+SciSpace,,NO_MATCH,0.0
+Iris.ai,,NO_MATCH,0.0
+Scite.ai,,NO_MATCH,0.0
+Litmaps,,NO_MATCH,0.0
+Inciteful,,NO_MATCH,0.0
+PaperDigest,,NO_MATCH,0.0
+Explain Paper,,NO_MATCH,0.0
+ChatPDF,,NO_MATCH,0.0
+Humata,,NO_MATCH,0.0
+Jenni AI,,NO_MATCH,0.0
+Paperpal,,NO_MATCH,0.0
+Trinka,,NO_MATCH,0.0
+Writefull,,NO_MATCH,0.0
+Zotero,,NO_MATCH,0.0
+Mendeley,,NO_MATCH,0.0
+EndNote,,NO_MATCH,0.0
+Wolfram Alpha,,NO_MATCH,0.0
+Statista,,NO_MATCH,0.0
+ScienceDirect,,NO_MATCH,0.0
+Google Scholar,,NO_MATCH,0.0
+PubMed,,NO_MATCH,0.0
+arXiv,,NO_MATCH,0.0
+JSTOR,,NO_MATCH,0.0
+Dimensions,,NO_MATCH,0.0
+Lens.org,,NO_MATCH,0.0
+Kopernio,,NO_MATCH,0.0
+Lateral,,NO_MATCH,0.0
+Zendesk AI,,NO_MATCH,0.0
+Kayako,,NO_MATCH,0.0
+Freshdesk,,NO_MATCH,0.0
+Tidio,,NO_MATCH,0.0
+Ada,,NO_MATCH,0.0
+Kustomer,,NO_MATCH,0.0
+Help Scout,,NO_MATCH,0.0
+LiveChat,,NO_MATCH,0.0
+Crisp,,NO_MATCH,0.0
+Tawk.to,,NO_MATCH,0.0
+Chatbot.com,,NO_MATCH,0.0
+Botpress,,NO_MATCH,0.0
+Voiceflow,,NO_MATCH,0.0
+Rasa,,NO_MATCH,0.0
+Dialogflow,,NO_MATCH,0.0
+Amazon Lex,,NO_MATCH,0.0
+IBM Watson Assistant,,NO_MATCH,0.0
+Yellow.ai,,NO_MATCH,0.0
+Haptik,,NO_MATCH,0.0
+Aisera,,NO_MATCH,0.0
+Forethought,,NO_MATCH,0.0
+Ultimate.ai,,NO_MATCH,0.0
+PolyAI,,NO_MATCH,0.0
+Replicant,,NO_MATCH,0.0
+Observe.AI,,NO_MATCH,0.0
+NICE CXone,,NO_MATCH,0.0
+Five9,,NO_MATCH,0.0
+Genesys AI,,NO_MATCH,0.0
+Talkdesk,,NO_MATCH,0.0
+Aircall,,NO_MATCH,0.0
+Gladly,,NO_MATCH,0.0
+Dixa,,NO_MATCH,0.0
+Gorgias,,NO_MATCH,0.0
+Re:amaze,,NO_MATCH,0.0
+Tableau,,NO_MATCH,0.0
+Power BI,,NO_MATCH,0.0
+Looker,,NO_MATCH,0.0
+Qlik Sense,,NO_MATCH,0.0
+ThoughtSpot,,NO_MATCH,0.0
+Domo,,NO_MATCH,0.0
+Sisense,,NO_MATCH,0.0
+IBM Cognos Analytics,,NO_MATCH,0.0
+Strategy,,NO_MATCH,0.0
+Metabase,,NO_MATCH,0.0
+Apache Superset,,NO_MATCH,0.0
+Redash,,NO_MATCH,0.0
+Mode Analytics,,NO_MATCH,0.0
+Hex,,NO_MATCH,0.0
+Deepnote,,NO_MATCH,0.0
+Observable,,NO_MATCH,0.0
+Datawrapper,,NO_MATCH,0.0
+Flourish,,NO_MATCH,0.0
+Looker Studio,,NO_MATCH,0.0
+Polymer,,NO_MATCH,0.0
+Rows,,NO_MATCH,0.0
+Julius AI,,NO_MATCH,0.0
+Zams,,NO_MATCH,0.0
+Akkio,,NO_MATCH,0.0
+Pecan AI,,NO_MATCH,0.0
+RapidMiner,,NO_MATCH,0.0
+DataRobot,,NO_MATCH,0.0
+H2O.ai,,NO_MATCH,0.0
+Alteryx,,NO_MATCH,0.0
+KNIME,,NO_MATCH,0.0
+Dataiku,,NO_MATCH,0.0
+Domino Data Lab,,NO_MATCH,0.0
+Saturn Cloud,,NO_MATCH,0.0
+MonkeyLearn,,NO_MATCH,0.0
+Amplitude,,NO_MATCH,0.0
+Mixpanel,,NO_MATCH,0.0
+Heap,,NO_MATCH,0.0
+FullStory,,NO_MATCH,0.0
+Hotjar,,NO_MATCH,0.0
+Workday AI,,NO_MATCH,0.0
+BambooHR,,NO_MATCH,0.0
+Gusto,,NO_MATCH,0.0
+Rippling,,NO_MATCH,0.0
+Deel,,NO_MATCH,0.0
+Remote,,NO_MATCH,0.0
+Oyster HR,,NO_MATCH,0.0
+Greenhouse,,NO_MATCH,0.0
+Lever,,NO_MATCH,0.0
+Workable,,NO_MATCH,0.0
+SmartRecruiters,,NO_MATCH,0.0
+iCIMS,,NO_MATCH,0.0
+Ashby,,NO_MATCH,0.0
+Eightfold AI,,NO_MATCH,0.0
+Paradox (Olivia),,NO_MATCH,0.0
+HireVue,,NO_MATCH,0.0
+Harver (Pymetrics),,NO_MATCH,0.0
+SeekOut,,NO_MATCH,0.0
+HiredScore,,NO_MATCH,0.0
+Textio,,NO_MATCH,0.0
+Phenom,,NO_MATCH,0.0
+Beamery,,NO_MATCH,0.0
+Avature,,NO_MATCH,0.0
+Recruiterflow,,NO_MATCH,0.0
+Fetcher,,NO_MATCH,0.0
+Khan Academy (Khanmigo),,NO_MATCH,0.0
+Duolingo,,NO_MATCH,0.0
+Coursera,,NO_MATCH,0.0
+Udemy,,NO_MATCH,0.0
+edX,,NO_MATCH,0.0
+Skillshare,,NO_MATCH,0.0
+MasterClass,,NO_MATCH,0.0
+Brilliant,,NO_MATCH,0.0
+Photomath,,NO_MATCH,0.0
+Mathway,,NO_MATCH,0.0
+Socratic by Google,,NO_MATCH,0.0
+Quizlet,,NO_MATCH,0.0
+Anki,,NO_MATCH,0.0
+RemNote,,NO_MATCH,0.0
+Brainly,,NO_MATCH,0.0
+Wayground,,NO_MATCH,0.0
+Kahoot,,NO_MATCH,0.0
+Nearpod,,NO_MATCH,0.0
+Gradescope,,NO_MATCH,0.0
+Turnitin,,NO_MATCH,0.0
+Quill.org,,NO_MATCH,0.0
+Notability AI,,NO_MATCH,0.0
+Edpuzzle,,NO_MATCH,0.0
+Explain Everything,,NO_MATCH,0.0
+Canva for Education,,NO_MATCH,0.0
+Teachable,,NO_MATCH,0.0
+Thinkific,,NO_MATCH,0.0
+Podia,,NO_MATCH,0.0
+LearnWorlds,,NO_MATCH,0.0
+ChatGPT Edu,,NO_MATCH,0.0
+Copilot for Education,,NO_MATCH,0.0
+Google Classroom AI,,NO_MATCH,0.0
+Cognii,,NO_MATCH,0.0
+Carnegie Learning,,NO_MATCH,0.0
+Century Tech,,NO_MATCH,0.0
+Squirrel AI,,NO_MATCH,0.0
+Third Space Learning,,NO_MATCH,0.0
+Querium,,NO_MATCH,0.0
+Ada Health,,NO_MATCH,0.0
+K Health,,NO_MATCH,0.0
+Buoy Health,,NO_MATCH,0.0
+Infermedica,,NO_MATCH,0.0
+PathAI,,NO_MATCH,0.0
+Viz.ai,,NO_MATCH,0.0
+Aidoc,,NO_MATCH,0.0
+Nanox.AI,,NO_MATCH,0.0
+Tempus,,NO_MATCH,0.0
+Flatiron Health,,NO_MATCH,0.0
+Recursion Pharmaceuticals,,NO_MATCH,0.0
+Insilico Medicine,,NO_MATCH,0.0
+Numerion Labs,,NO_MATCH,0.0
+BenevolentAI,,NO_MATCH,0.0
+Exscientia,,NO_MATCH,0.0
+Deep Genomics,,NO_MATCH,0.0
+Freenome,,NO_MATCH,0.0
+Paige AI,,NO_MATCH,0.0
+Caption AI (GE HealthCare),,NO_MATCH,0.0
+Butterfly Network,,NO_MATCH,0.0
+Nuance DAX,,NO_MATCH,0.0
+Suki AI,,NO_MATCH,0.0
+Abridge,Abridge,EXACT,100.0
+Nabla,,NO_MATCH,0.0
+Woebot,,NO_MATCH,0.0
+Wysa,,NO_MATCH,0.0
+Talkiatry,,NO_MATCH,0.0
+Headspace,,NO_MATCH,0.0
+Calm,,NO_MATCH,0.0
+Whoop,,NO_MATCH,0.0
+Oura Ring,,NO_MATCH,0.0
+Google Fitbit,,NO_MATCH,0.0
+Apple Health AI,,NO_MATCH,0.0
+Google Health AI,,NO_MATCH,0.0
+NVIDIA Clara,,NO_MATCH,0.0
+Microsoft Health Bot,,NO_MATCH,0.0
+Regard,,NO_MATCH,0.0
+Harvey AI,,NO_MATCH,0.0
+CoCounsel (Thomson Reuters),,NO_MATCH,0.0
+Luminance,,NO_MATCH,0.0
+Kira Systems,,NO_MATCH,0.0
+Ironclad,,NO_MATCH,0.0
+Leah,,NO_MATCH,0.0
+Juro,,NO_MATCH,0.0
+SpotDraft,,NO_MATCH,0.0
+Legartis,,NO_MATCH,0.0
+LawGeex,,NO_MATCH,0.0
+Lex Machina,,NO_MATCH,0.0
+Fastcase,,NO_MATCH,0.0
+vLex,,NO_MATCH,0.0
+Westlaw Advantage,,NO_MATCH,0.0
+LexisNexis AI,,NO_MATCH,0.0
+Relativity,,NO_MATCH,0.0
+Everlaw,,NO_MATCH,0.0
+Logikcull,,NO_MATCH,0.0
+DoNotPay,,NO_MATCH,0.0
+LegalZoom,,NO_MATCH,0.0
+Rocket Lawyer,,NO_MATCH,0.0
+Gavel,,NO_MATCH,0.0
+Clio Draft,,NO_MATCH,0.0
+Diligen,,NO_MATCH,0.0
+eBrevia,,NO_MATCH,0.0
+Eigen Technologies,,NO_MATCH,0.0
+Neota Logic,,NO_MATCH,0.0
+Josef,,NO_MATCH,0.0
+Detangle.ai,,NO_MATCH,0.0
+Bloomberg Terminal AI,,NO_MATCH,0.0
+Alpaca,,NO_MATCH,0.0
+Kensho,,NO_MATCH,0.0
+Aylien (Quantexa),,NO_MATCH,0.0
+AlphaSense,,NO_MATCH,0.0
+Kavout,,NO_MATCH,0.0
+Numerai,,NO_MATCH,0.0
+Alphasimplex,,NO_MATCH,0.0
+Betterment,,NO_MATCH,0.0
+Wealthfront,,NO_MATCH,0.0
+Plaid,,NO_MATCH,0.0
+Stripe AI,,NO_MATCH,0.0
+Square,,NO_MATCH,0.0
+Brex AI,,NO_MATCH,0.0
+Ramp,,NO_MATCH,0.0
+BILL Spend & Expense,,NO_MATCH,0.0
+Expensify,,NO_MATCH,0.0
+QuickBooks AI,,NO_MATCH,0.0
+Xero AI,,NO_MATCH,0.0
+FreshBooks,,NO_MATCH,0.0
+Wave,,NO_MATCH,0.0
+Bench,,NO_MATCH,0.0
+Pilot,,NO_MATCH,0.0
+Tipalti,,NO_MATCH,0.0
+Bill.com,,NO_MATCH,0.0
+Coupa,,NO_MATCH,0.0
+Anaplan,,NO_MATCH,0.0
+Adaptive Planning,,NO_MATCH,0.0
+Runway Financial,,NO_MATCH,0.0
+Cube,,NO_MATCH,0.0
+Jirav,,NO_MATCH,0.0
+LivePlan,,NO_MATCH,0.0
+Planful,,NO_MATCH,0.0
+Vena Solutions,,NO_MATCH,0.0
+Carta,,NO_MATCH,0.0
+Pulley,,NO_MATCH,0.0
+AngelList,,NO_MATCH,0.0
+Visible,,NO_MATCH,0.0
+TaxJar,,NO_MATCH,0.0
+Avalara,,NO_MATCH,0.0
+Recurly,,NO_MATCH,0.0
+Chargebee,,NO_MATCH,0.0
+Paddle,,NO_MATCH,0.0
+Wise,,NO_MATCH,0.0
+Revolut Business,,NO_MATCH,0.0
+Mercury,,NO_MATCH,0.0
+Airbase,,NO_MATCH,0.0
+Shopify AI (Sidekick),,NO_MATCH,0.0
+BigCommerce,,NO_MATCH,0.0
+WooCommerce,,NO_MATCH,0.0
+Adobe Commerce,,NO_MATCH,0.0
+Dynamic Yield,,NO_MATCH,0.0
+Nosto,,NO_MATCH,0.0
+Clerk.io,,NO_MATCH,0.0
+Algolia,,NO_MATCH,0.0
+Bloomreach,,NO_MATCH,0.0
+Searchspring,,NO_MATCH,0.0
+Privy,,NO_MATCH,0.0
+Yotpo,,NO_MATCH,0.0
+Stamped.io,,NO_MATCH,0.0
+Okendo,,NO_MATCH,0.0
+Syte,,NO_MATCH,0.0
+Vue.ai,,NO_MATCH,0.0
+Feedvisor,,NO_MATCH,0.0
+Jungle Scout,,NO_MATCH,0.0
+Helium 10,,NO_MATCH,0.0
+Perpetua,,NO_MATCH,0.0
+Anyword for E-commerce,,NO_MATCH,0.0
+Describely,,NO_MATCH,0.0
+Copysmith,,NO_MATCH,0.0
+Pixelcut,,NO_MATCH,0.0
+Claid.ai,,NO_MATCH,0.0
+Flair AI,,NO_MATCH,0.0
+Pebblely,,NO_MATCH,0.0
+ReturnGO,,NO_MATCH,0.0
+Route,,NO_MATCH,0.0
+DeepL,DeepL,EXACT,100.0
+Google Translate,,NO_MATCH,0.0
+Microsoft Translator,,NO_MATCH,0.0
+Apple Translate,,NO_MATCH,0.0
+Amazon Translate,,NO_MATCH,0.0
+Papago,,NO_MATCH,0.0
+Smartling,,NO_MATCH,0.0
+Lokalise,,NO_MATCH,0.0
+Phrase,,NO_MATCH,0.0
+Unbabel,,NO_MATCH,0.0
+Translated,,NO_MATCH,0.0
+Weglot,,NO_MATCH,0.0
+Transifex,,NO_MATCH,0.0
+Crowdin,,NO_MATCH,0.0
+Lilt,,NO_MATCH,0.0
+Trados (RWS),,NO_MATCH,0.0
+MemoQ,,NO_MATCH,0.0
+Wordfast,,NO_MATCH,0.0
+MateCat,,NO_MATCH,0.0
+Lingvanex,,NO_MATCH,0.0
+Reverso,,NO_MATCH,0.0
+Linguee,,NO_MATCH,0.0
+Yandex Translate,,NO_MATCH,0.0
+Systran,,NO_MATCH,0.0
+TextUnited,,NO_MATCH,0.0
+Darktrace,,NO_MATCH,0.0
+CrowdStrike,,NO_MATCH,0.0
+SentinelOne,,NO_MATCH,0.0
+Palo Alto Cortex,,NO_MATCH,0.0
+Vectra AI,,NO_MATCH,0.0
+Cybereason,,NO_MATCH,0.0
+Sophos AI,,NO_MATCH,0.0
+Fortinet FortiAI,,NO_MATCH,0.0
+Check Point AI,,NO_MATCH,0.0
+Recorded Future,,NO_MATCH,0.0
+Anomali,,NO_MATCH,0.0
+ThreatConnect,,NO_MATCH,0.0
+Exabeam,,NO_MATCH,0.0
+Sumo Logic,,NO_MATCH,0.0
+Splunk AI,,NO_MATCH,0.0
+Elastic Security,,NO_MATCH,0.0
+LogRhythm,,NO_MATCH,0.0
+Swimlane,,NO_MATCH,0.0
+Demisto (Palo Alto XSOAR),,NO_MATCH,0.0
+Tessian,,NO_MATCH,0.0
+Abnormal AI,,NO_MATCH,0.0
+Material Security,,NO_MATCH,0.0
+CodeQL,,NO_MATCH,0.0
+GitGuardian,,NO_MATCH,0.0
+Semgrep,,NO_MATCH,0.0
+Veracode,,NO_MATCH,0.0
+Checkmarx,,NO_MATCH,0.0
+SonarQube,,NO_MATCH,0.0
+WhiteSource (Mend),,NO_MATCH,0.0
+Socket,,NO_MATCH,0.0
+Pentera,,NO_MATCH,0.0
+HackerOne,,NO_MATCH,0.0
+Bugcrowd,,NO_MATCH,0.0
+Orca Security,,NO_MATCH,0.0
+Wiz,,NO_MATCH,0.0
+Lacework (Fortinet FortiCNAPP),,NO_MATCH,0.0
+Aqua Security,,NO_MATCH,0.0
+Sysdig,,NO_MATCH,0.0
+Tenable AI,,NO_MATCH,0.0
+Qualys,,NO_MATCH,0.0
+AutoGPT,,NO_MATCH,0.0
+CrewAI,,NO_MATCH,0.0
+LangGraph,,NO_MATCH,0.0
+Autogen (Microsoft),,NO_MATCH,0.0
+Semantic Kernel,,NO_MATCH,0.0
+SuperAGI,,NO_MATCH,0.0
+BabyAGI,,NO_MATCH,0.0
+MetaGPT,,NO_MATCH,0.0
+ChatDev,,NO_MATCH,0.0
+Ultravox,,NO_MATCH,0.0
+Lindy AI,,NO_MATCH,0.0
+Relevance AI,,NO_MATCH,0.0
+Stack AI,,NO_MATCH,0.0
+Flowise,,NO_MATCH,0.0
+Dify,,NO_MATCH,0.0
+Langflow,,NO_MATCH,0.0
+Pipedream,,NO_MATCH,0.0
+Activepieces,,NO_MATCH,0.0
+Huginn,,NO_MATCH,0.0
+Temporal,,NO_MATCH,0.0
+Prefect,,NO_MATCH,0.0
+Dagster,,NO_MATCH,0.0
+Apache Airflow,,NO_MATCH,0.0
+Retool,,NO_MATCH,0.0
+Appsmith,,NO_MATCH,0.0
+Budibase,,NO_MATCH,0.0
+Tooljet,,NO_MATCH,0.0
+Bubble,,NO_MATCH,0.0
+Adalo,,NO_MATCH,0.0
+Softr,,NO_MATCH,0.0
+WeWeb,,NO_MATCH,0.0
+Xano,,NO_MATCH,0.0
+Supabase,,NO_MATCH,0.0
+Firebase,,NO_MATCH,0.0
+Neon,,NO_MATCH,0.0
+PlanetScale,,NO_MATCH,0.0
+Upstash,,NO_MATCH,0.0
+Convex,,NO_MATCH,0.0
+Railway,,NO_MATCH,0.0
+Render,,NO_MATCH,0.0
+Fly.io,,NO_MATCH,0.0
+Vercel,Vercel,EXACT,100.0
+Netlify,,NO_MATCH,0.0
+Cloudflare Workers AI,,NO_MATCH,0.0
+Buffer,,NO_MATCH,0.0
+Hootsuite,,NO_MATCH,0.0
+Sprout Social,,NO_MATCH,0.0
+Later,,NO_MATCH,0.0
+Planoly,,NO_MATCH,0.0
+Socialbee,,NO_MATCH,0.0
+Publer,,NO_MATCH,0.0
+CoSchedule,,NO_MATCH,0.0
+Iconosquare,,NO_MATCH,0.0
+Brandwatch,,NO_MATCH,0.0
+Sprinklr,,NO_MATCH,0.0
+Agorapulse,,NO_MATCH,0.0
+Sendible,,NO_MATCH,0.0
+SocialPilot,,NO_MATCH,0.0
+Loomly,,NO_MATCH,0.0
+Tailwind,,NO_MATCH,0.0
+Predis.ai,,NO_MATCH,0.0
+Lately,,NO_MATCH,0.0
+Ocoya,,NO_MATCH,0.0
+ContentStudio,,NO_MATCH,0.0
+Missinglettr,,NO_MATCH,0.0
+Taplio,,NO_MATCH,0.0
+AuthoredUp,,NO_MATCH,0.0
+Shield Analytics,,NO_MATCH,0.0
+Repurpose.io,,NO_MATCH,0.0
+Canva Social,,NO_MATCH,0.0
+Pablo by Buffer,,NO_MATCH,0.0
+Crello (VistaCreate),,NO_MATCH,0.0
+Stencil,,NO_MATCH,0.0
+Zillow AI,,NO_MATCH,0.0
+Redfin AI,,NO_MATCH,0.0
+Compass AI,,NO_MATCH,0.0
+Matterport,,NO_MATCH,0.0
+Rechat,,NO_MATCH,0.0
+Follow Up Boss,,NO_MATCH,0.0
+kvCORE,,NO_MATCH,0.0
+Roof AI,,NO_MATCH,0.0
+Offrs,,NO_MATCH,0.0
+Restb.ai,,NO_MATCH,0.0
+HouseCanary,,NO_MATCH,0.0
+Cotality,,NO_MATCH,0.0
+Reonomy,,NO_MATCH,0.0
+Skyline AI,,NO_MATCH,0.0
+Ylopo,,NO_MATCH,0.0
+Lofty,,NO_MATCH,0.0
+Inside Real Estate,,NO_MATCH,0.0
+Structurely,,NO_MATCH,0.0
+Nifty,,NO_MATCH,0.0
+Wrike AI,,NO_MATCH,0.0
+Smartsheet AI,,NO_MATCH,0.0
+Zoho Projects AI,,NO_MATCH,0.0
+Notion Calendar,,NO_MATCH,0.0
+Stormboard AI,,NO_MATCH,0.0
+FigJam AI,,NO_MATCH,0.0
+Whimsical AI,,NO_MATCH,0.0
+Lucidchart AI,,NO_MATCH,0.0
+Draw.io,,NO_MATCH,0.0
+Excalidraw,,NO_MATCH,0.0
+Eraser.io,,NO_MATCH,0.0
+AskYourPDF,,NO_MATCH,0.0
+DocuAsk,,NO_MATCH,0.0
+PDF.ai,,NO_MATCH,0.0
+Docalysis,,NO_MATCH,0.0
+Sharly AI,,NO_MATCH,0.0
+LightPDF AI,,NO_MATCH,0.0
+Smallpdf AI,,NO_MATCH,0.0
+iLovePDF,,NO_MATCH,0.0
+DocSend,,NO_MATCH,0.0
+Pandoc,,NO_MATCH,0.0
+Docusaurus,,NO_MATCH,0.0
+GitBook,,NO_MATCH,0.0
+ReadMe,,NO_MATCH,0.0
+Swagger/OpenAPI,,NO_MATCH,0.0
+Postman,,NO_MATCH,0.0
+Insomnia,,NO_MATCH,0.0
+RapidAPI,,NO_MATCH,0.0
+Hoppscotch,,NO_MATCH,0.0
+Twilio,,NO_MATCH,0.0
+SendGrid,,NO_MATCH,0.0
+Mailgun,,NO_MATCH,0.0
+Resend,,NO_MATCH,0.0
+Novu,,NO_MATCH,0.0
+OneSignal,,NO_MATCH,0.0
+Pusher,,NO_MATCH,0.0
+Ably,,NO_MATCH,0.0
+Agora,,NO_MATCH,0.0
+LiveKit,,NO_MATCH,0.0
+Daily,,NO_MATCH,0.0
+Whereby,,NO_MATCH,0.0
+Zoom AI Companion,,NO_MATCH,0.0
+Microsoft Teams AI,,NO_MATCH,0.0
+Slack AI,,NO_MATCH,0.0
+Discord AI,,NO_MATCH,0.0
+Gather,,NO_MATCH,0.0
+Tandem,,NO_MATCH,0.0
+Around,,NO_MATCH,0.0
+Tuple,,NO_MATCH,0.0
+Remio,,NO_MATCH,0.0
+Roblox GUI Maker,,NO_MATCH,0.0
+Auferet,,NO_MATCH,0.0
+Recapo.ai,,NO_MATCH,0.0
+DaoXE,,NO_MATCH,0.0
+Markstream,,NO_MATCH,0.0
+Better Agent,,NO_MATCH,0.0
+FPVTune,,NO_MATCH,0.0
+Image Describer,,NO_MATCH,0.0
+Blur Background,,NO_MATCH,0.0
+Video Upscaler,,NO_MATCH,0.0
+Answerdeck,,NO_MATCH,0.0
+BrikSync PropOS,,NO_MATCH,0.0
+Sharpniq,,NO_MATCH,0.0
+CVExpert,,NO_MATCH,0.0
+Gemini 3,,NO_MATCH,0.0
+Google Veo 3,,NO_MATCH,0.0
+GPT Image 2,,NO_MATCH,0.0
+GPT-5,,NO_MATCH,0.0
+Nano Banana Pro,,NO_MATCH,0.0
+Best of AI,,NO_MATCH,0.0
+AI for Developers,,NO_MATCH,0.0
+Altern Newsletter,,NO_MATCH,0.0
+EIGHT ADVISORY SAS,,NO_MATCH,0.0
+planetlabs,,NO_MATCH,0.0
+Jellyfish,,NO_MATCH,0.0
+Yoummday GmbH,,NO_MATCH,0.0
+Kong,,NO_MATCH,0.0
+Institut Mines-Télécom,,NO_MATCH,0.0
+Lavendo,,NO_MATCH,0.0
+Hire Hangar,,NO_MATCH,0.0
+parloa,,NO_MATCH,0.0
+zetaglobal,,NO_MATCH,0.0
+Doctolib,,NO_MATCH,0.0
+engelhart,,NO_MATCH,0.0
+Smile Digital Health,,NO_MATCH,0.0
+Physicsx,,NO_MATCH,0.0
+Celerion,,NO_MATCH,0.0
+Narvar,,NO_MATCH,0.0
+Sprinto,,NO_MATCH,0.0
+StarCompliance,,NO_MATCH,0.0
+Almedia,,NO_MATCH,0.0
+Proxima Fusion GmbH,,NO_MATCH,0.0
+Mapbox,,NO_MATCH,0.0
+Seer Interactive,,NO_MATCH,0.0
+CSC Generation,,NO_MATCH,0.0
+Artefactlinkedin,,NO_MATCH,0.0
+Artefact,,NO_MATCH,0.0
+PagerDuty,,NO_MATCH,0.0
+Convergent Research,,NO_MATCH,0.0
+Cambridgeconsultantslimited,,NO_MATCH,0.0
+Onapsis,,NO_MATCH,0.0
+Toptal,,NO_MATCH,0.0
+Mubi,,NO_MATCH,0.0
+Fortitude Re,,NO_MATCH,0.0
+Havenpark Communities,,NO_MATCH,0.0
+Samsara,,NO_MATCH,0.0
+Zuora,,NO_MATCH,0.0
+Horace Mann,,NO_MATCH,0.0
+MUTT DATA,,NO_MATCH,0.0
+Lightcast,,NO_MATCH,0.0
+成都蓝麦田旅游策划设计有限公司,,NO_MATCH,0.0
+Scout Motors Inc.,,NO_MATCH,0.0
+VetsEZ,,NO_MATCH,0.0
+Nextech Systems,,NO_MATCH,0.0
+accesa.eu,,NO_MATCH,0.0
+Fanaticscommerce,,NO_MATCH,0.0
+PeopleGrove,,NO_MATCH,0.0
+Protective Life,,NO_MATCH,0.0
+Framestore,,NO_MATCH,0.0
+KnowBe4,,NO_MATCH,0.0
+Sutherland,,NO_MATCH,0.0
+Kraken,,NO_MATCH,0.0
+mongodb,,NO_MATCH,0.0
+wppmedia,,NO_MATCH,0.0
+TransPerfect,,NO_MATCH,0.0
+Varicent,,NO_MATCH,0.0
+D2L,,NO_MATCH,0.0
+Stripe,,NO_MATCH,0.0
+Sigma Computing,,NO_MATCH,0.0
+Doximity,,NO_MATCH,0.0
+ExtraHop,,NO_MATCH,0.0
+Binance,,NO_MATCH,0.0
+Netcraft,,NO_MATCH,0.0
+Magentic,,NO_MATCH,0.0
